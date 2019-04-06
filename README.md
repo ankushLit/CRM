@@ -1,2 +1,2 @@
 # eldoraCRM
-CRM applications for eldora power.
+CRM application for eldora power.
