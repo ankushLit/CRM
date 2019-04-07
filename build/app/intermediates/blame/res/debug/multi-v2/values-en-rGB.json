@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/ankush/Desktop/eldoracrm/crm/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rGB/values-en-rGB.xml",
+            "outputFile": "/Users/ankush/Desktop/CRM/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rGB/values-en-rGB.xml",
             "map": [
                 {
                     "source": "/Users/ankush/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/7b0be3a4d11a481e2837c889237ae045/res/values-en-rGB/values-en-rGB.xml",

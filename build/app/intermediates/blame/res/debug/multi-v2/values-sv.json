@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/ankush/Desktop/eldoracrm/crm/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-sv/values-sv.xml",
+            "outputFile": "/Users/ankush/Desktop/CRM/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-sv/values-sv.xml",
             "map": [
                 {
                     "source": "/Users/ankush/.gradle/caches/transforms-1/files-1.1/jetified-firebase-messaging-17.3.3.aar/2df61f961b85a7f68457a25995ddbb44/res/values-sv/values.xml",

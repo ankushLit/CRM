@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/ankush/Desktop/eldoracrm/crm/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
+            "outputFile": "/Users/ankush/Desktop/CRM/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
             "map": [
                 {
                     "source": "/Users/ankush/.gradle/caches/transforms-1/files-1.1/media-1.0.0.aar/00beb0873ed7ebea83beade917f24817/res/values-v24/values-v24.xml",

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:crm/model/customer.dart';
 import 'package:crm/pages/detail_page.dart';
 import 'package:crm/animations/scale_animation.dart';
-
+import 'customerDetailsFromBottom.dart';
 class CustomerCard extends StatelessWidget{
 
   CustomerCard(this.status, this.customerName, this.address, this.contactNumber,
@@ -55,7 +55,13 @@ class CustomerCard extends StatelessWidget{
       trailing:
       Icon(Icons.keyboard_arrow_right, color: Colors.black, size: 30.0),
       onTap: () {
-        Navigator.push(
+        DetailsBottomSheet.openBottomSheet(context,status,
+            customerName,
+            address,
+            contactNumber,
+            location,
+            cid);
+        /*Navigator.push(
             context,
             MaterialPageRoute(
                 builder: (context) => DetailPage(status,
@@ -65,7 +71,7 @@ class CustomerCard extends StatelessWidget{
                     location,
                 cid)
         )
-        );
+        );*/
         },
     );
 

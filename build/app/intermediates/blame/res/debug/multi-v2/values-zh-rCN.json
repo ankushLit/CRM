@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/ankush/Desktop/eldoracrm/crm/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rCN/values-zh-rCN.xml",
+            "outputFile": "/Users/ankush/Desktop/CRM/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rCN/values-zh-rCN.xml",
             "map": [
                 {
                     "source": "/Users/ankush/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/7b0be3a4d11a481e2837c889237ae045/res/values-zh-rCN/values-zh-rCN.xml",

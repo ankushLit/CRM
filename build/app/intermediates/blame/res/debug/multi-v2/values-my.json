@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/ankush/Desktop/eldoracrm/crm/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-my/values-my.xml",
+            "outputFile": "/Users/ankush/Desktop/CRM/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-my/values-my.xml",
             "map": [
                 {
                     "source": "/Users/ankush/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-16.0.1.aar/5086fa682289777a2eb35eca4c464907/res/values-my/values.xml",

@@ -6,6 +6,7 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:crm/controllers/database_controller.dart';
 import 'remarks_information_page.dart';
+import 'package:crm/components/alert_box.dart';
 
 class DetailPage extends StatefulWidget {
   _State createState()=>new _State();
@@ -22,7 +23,6 @@ class DetailPage extends StatefulWidget {
   class _State extends State<DetailPage>{
     DateTimePicker _picker;
     FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
-
 
     @override
     void initState() {
@@ -58,47 +58,56 @@ class DetailPage extends StatefulWidget {
       child:Container(
       child: new Icon(
         Icons.phone,
-        size: 40,
+        color: Colors.black,
+        size: MediaQuery.of(context).size.height * 0.04,
       ),
     ),
       onTap:()=> launch('tel://'+widget.contactNumber),
     );
 
     final topContentText = Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+     // crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        SizedBox(height: 90.0),
         ListTile(
-          leading: Icon(
-      Icons.account_circle,
-      color: Colors.black,
-      size: 40.0,
-    ),
-          trailing: Icon(Icons.edit,
-      color: Colors.black,
-      size: 30.0,
-      ),
+          leading: new Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              GestureDetector(
+                child: Icon(Icons.edit,
+                  color: Colors.black,
+                  size: MediaQuery.of(context).size.height * 0.04,
+                ),
+                onTap:(){
+                  Navigator.of(context).push(new MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return new AddEntryDialog(
+                          whereFrom: true,
+                          cid: widget.cid,
+                        );
+                      },
+                      fullscreenDialog: true
+                  ));
+                },
+              ),
+                  Icon(
+                    Icons.account_circle,
+                    color: Colors.black,
+                    size: MediaQuery.of(context).size.height * 0.10,
+                  ),
+              callCustomer
+                ],
+              ),
         ),
-        SizedBox(height: 10.0),
-        Text(
-          widget.customerName,
-          style: TextStyle(color: Colors.black, fontSize: 45.0),
-        ),
-        SizedBox(height: 30.0),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Expanded(flex: 1, child: levelIndicator),
-            Expanded(
-                flex: 6,
-                child: Padding(
-                    padding: EdgeInsets.only(left: 10.0),
-                    child: Text(
-                      widget.status + ' Client',
-                      style: TextStyle(color: Colors.black),
-                    ))),
-            Expanded(flex: 1, child: callCustomer)
-          ],
+        new ListTile(
+          leading: new Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                widget.customerName,
+                style: TextStyle(color: Colors.black, fontSize: MediaQuery.of(context).size.width*0.1),
+              ),
+            ],
+          ),
         ),
       ],
     );
@@ -107,15 +116,10 @@ class DetailPage extends StatefulWidget {
       children: <Widget>[
         Container(
             padding: EdgeInsets.only(left: 10.0),
-            height: MediaQuery.of(context).size.height * 0.5,
-            decoration: new BoxDecoration(
-              image: new DecorationImage(
-                image: new AssetImage("drive-steering-wheel.jpg"),
-                fit: BoxFit.cover,
-              ),
-            )),
+            height: MediaQuery.of(context).size.height * 0.1,
+        ),
         Container(
-          height: MediaQuery.of(context).size.height * 0.4,
+          height: MediaQuery.of(context).size.height * 0.20,
           padding: EdgeInsets.all(30.0),
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(color: Color(0xFFF2CB1D)),
@@ -123,25 +127,31 @@ class DetailPage extends StatefulWidget {
             child: topContentText,
           ),
         ),
-        Positioned(
-          left: 8.0,
-          top: 60.0,
-          child: InkWell(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Icon(Icons.arrow_back, color: Colors.black),
-          ),
-        )
       ],
     );
 
-    final bottomContentText = new Text(
-      "Address: "+widget.address,
-      style: TextStyle(fontSize: 18.0),
+    final bottomContentText =new Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        new ListTile(
+          leading: levelIndicator,
+          title: new Text(widget.status.substring(0,1).toUpperCase()+widget.status.substring(1),
+          style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),
+          ),
+        ),
+        new ListTile(
+          leading: const Icon(Icons.location_city),
+          title: new Text(
+            widget.address,
+            textAlign: TextAlign.left,
+            style: TextStyle(fontSize: 18.0,),
+          ),
+        ),
+
+      ],
     );
     final readButton = Container(
-        padding: EdgeInsets.symmetric(vertical: 16.0),
+        padding: EdgeInsets.symmetric(vertical: 8.0),
         width: MediaQuery.of(context).size.width,
         child: RaisedButton(
           onPressed: () {
@@ -160,7 +170,7 @@ class DetailPage extends StatefulWidget {
         ));
     final bottomContent = Container(
       width: MediaQuery.of(context).size.width,
-      padding: EdgeInsets.all(40.0),
+      padding: EdgeInsets.all(10.0),
       child: Center(
         child: Column(
           children: <Widget>[bottomContentText, readButton],

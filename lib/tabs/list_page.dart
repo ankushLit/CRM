@@ -35,7 +35,9 @@ class _ListPageState extends State<ListPage> with SingleTickerProviderStateMixin
     void _openAddEntryDialog() {
        Navigator.of(context).push(new MaterialPageRoute(
           builder: (BuildContext context) {
-            return new AddEntryDialog();
+            return new AddEntryDialog(
+              whereFrom: false,
+            );
           },
           fullscreenDialog: true
       ));

@@ -1,16 +1,16 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:1:1-47:12
-INJECTED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:1:1-47:12
-INJECTED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:1:1-47:12
-INJECTED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:1:1-47:12
+ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:1:1-47:12
+INJECTED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:1:1-47:12
+INJECTED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:1:1-47:12
+INJECTED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:1:1-47:12
 MERGED from [androidx.multidex:multidex:2.0.0] /Users/ankush/.gradle/caches/transforms-1/files-1.1/multidex-2.0.0.aar/16a0ae55bc7f0d2b873986070f63f5cb/AndroidManifest.xml:17:1-22:12
-MERGED from [:firebase_messaging] /Users/ankush/Desktop/eldoracrm/crm/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-20:12
-MERGED from [:firebase_auth] /Users/ankush/Desktop/eldoracrm/crm/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:url_launcher] /Users/ankush/Desktop/eldoracrm/crm/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-14:12
-MERGED from [:flutter_local_notifications] /Users/ankush/Desktop/eldoracrm/crm/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:cloud_firestore] /Users/ankush/Desktop/eldoracrm/crm/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:firebase_core] /Users/ankush/Desktop/eldoracrm/crm/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:firebase_messaging] /Users/ankush/Desktop/CRM/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-20:12
+MERGED from [:firebase_auth] /Users/ankush/Desktop/CRM/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:url_launcher] /Users/ankush/Desktop/CRM/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-14:12
+MERGED from [:flutter_local_notifications] /Users/ankush/Desktop/CRM/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:cloud_firestore] /Users/ankush/Desktop/CRM/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:firebase_core] /Users/ankush/Desktop/CRM/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:firebase-messaging:17.3.3] /Users/ankush/.gradle/caches/transforms-1/files-1.1/jetified-firebase-messaging-17.3.3.aar/2df61f961b85a7f68457a25995ddbb44/AndroidManifest.xml:17:1-37:12
 MERGED from [com.google.firebase:firebase-auth:16.0.5] /Users/ankush/.gradle/caches/transforms-1/files-1.1/jetified-firebase-auth-16.0.5.aar/5290631adc7d94c937e6e179c58f8a95/AndroidManifest.xml:17:1-42:12
 MERGED from [com.google.firebase:firebase-firestore:17.1.1] /Users/ankush/.gradle/caches/transforms-1/files-1.1/jetified-firebase-firestore-17.1.1.aar/6ff4416cf456b0d65a74c1e95ca9cd6f/AndroidManifest.xml:2:1-21:12
@@ -58,25 +58,25 @@ MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/ankush/.gradle/c
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /Users/ankush/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.0.0.aar/defe9de25f577fa7a748d1ee6cb28d28/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:protolite-well-known-types:16.0.0] /Users/ankush/.gradle/caches/transforms-1/files-1.1/protolite-well-known-types-16.0.0.aar/fae87b629a13ce6457d4358a3ed1a5b4/AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.3] /Users/ankush/.gradle/caches/transforms-1/files-1.1/play-services-measurement-base-16.0.3.aar/0d4968d88098e9d056981ed554c43dc2/AndroidManifest.xml:2:1-9:12
-INJECTED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:1:1-47:12
-INJECTED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:1:1-47:12
-INJECTED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:1:1-47:12
+INJECTED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:1:1-47:12
+INJECTED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:1:1-47:12
+INJECTED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:1:1-47:12
 	package
-		ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:2:5-30
-		INJECTED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:2:5-30
+		INJECTED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:1:1-47:12
-		INJECTED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:1:1-47:12
+		INJECTED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:1:1-47:12
-		INJECTED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:1:1-47:12
+		INJECTED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:1:11-69
+		ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:8:5-66
+ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:8:5-66
 MERGED from [com.google.firebase:firebase-firestore:17.1.1] /Users/ankush/.gradle/caches/transforms-1/files-1.1/jetified-firebase-firestore-17.1.1.aar/6ff4416cf456b0d65a74c1e95ca9cd6f/AndroidManifest.xml:11:5-67
 MERGED from [com.google.firebase:firebase-firestore:17.1.1] /Users/ankush/.gradle/caches/transforms-1/files-1.1/jetified-firebase-firestore-17.1.1.aar/6ff4416cf456b0d65a74c1e95ca9cd6f/AndroidManifest.xml:11:5-67
 MERGED from [com.google.firebase:firebase-measurement-connector-impl:17.0.2] /Users/ankush/.gradle/caches/transforms-1/files-1.1/jetified-firebase-measurement-connector-impl-17.0.2.aar/6feec2a0f06a7e34b7c8cead63eb2115/AndroidManifest.xml:22:5-67
@@ -88,21 +88,21 @@ MERGED from [com.google.firebase:firebase-analytics-impl:16.2.2] /Users/ankush/.
 MERGED from [com.google.firebase:firebase-iid:17.0.3] /Users/ankush/.gradle/caches/transforms-1/files-1.1/jetified-firebase-iid-17.0.3.aar/87c74aeefcccf3b93ec06b6889990287/AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-iid:17.0.3] /Users/ankush/.gradle/caches/transforms-1/files-1.1/jetified-firebase-iid-17.0.3.aar/87c74aeefcccf3b93ec06b6889990287/AndroidManifest.xml:23:5-67
 	android:name
-		ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:8:22-64
+		ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:8:22-64
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
-ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:9:5-80
+ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:9:5-80
 	android:name
-		ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:9:22-78
+		ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:9:22-78
 uses-permission#android.permission.VIBRATE
-ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:10:5-66
+ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:10:5-66
 	android:name
-		ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:10:22-63
+		ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:10:22-63
 application
-ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:17:5-46:19
-MERGED from [:firebase_messaging] /Users/ankush/Desktop/eldoracrm/crm/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-18:19
-MERGED from [:firebase_messaging] /Users/ankush/Desktop/eldoracrm/crm/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-18:19
-MERGED from [:url_launcher] /Users/ankush/Desktop/eldoracrm/crm/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-12:19
-MERGED from [:url_launcher] /Users/ankush/Desktop/eldoracrm/crm/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-12:19
+ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:17:5-46:19
+MERGED from [:firebase_messaging] /Users/ankush/Desktop/CRM/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-18:19
+MERGED from [:firebase_messaging] /Users/ankush/Desktop/CRM/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-18:19
+MERGED from [:url_launcher] /Users/ankush/Desktop/CRM/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-12:19
+MERGED from [:url_launcher] /Users/ankush/Desktop/CRM/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-12:19
 MERGED from [com.google.firebase:firebase-messaging:17.3.3] /Users/ankush/.gradle/caches/transforms-1/files-1.1/jetified-firebase-messaging-17.3.3.aar/2df61f961b85a7f68457a25995ddbb44/AndroidManifest.xml:22:5-35:19
 MERGED from [com.google.firebase:firebase-messaging:17.3.3] /Users/ankush/.gradle/caches/transforms-1/files-1.1/jetified-firebase-messaging-17.3.3.aar/2df61f961b85a7f68457a25995ddbb44/AndroidManifest.xml:22:5-35:19
 MERGED from [com.google.firebase:firebase-auth:16.0.5] /Users/ankush/.gradle/caches/transforms-1/files-1.1/jetified-firebase-auth-16.0.5.aar/5290631adc7d94c937e6e179c58f8a95/AndroidManifest.xml:23:5-40:19
@@ -148,73 +148,73 @@ MERGED from [com.google.android.gms:play-services-measurement-base:16.0.3] /User
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.0.1] /Users/ankush/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/7b0be3a4d11a481e2837c889237ae045/AndroidManifest.xml:22:18-86
 	android:label
-		ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:19:9-28
+		ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:19:9-28
 	android:icon
-		ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:20:9-43
+		ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:20:9-43
 	android:name
-		ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:18:9-57
+		ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:18:9-57
 receiver#com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver
-ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:21:9-25:20
+ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:21:9-25:20
 	android:name
-		ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:21:19-107
+		ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:21:19-107
 intent-filter#action:name:android.intent.action.BOOT_COMPLETED
-ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:22:13-24:29
+ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:22:13-24:29
 action#android.intent.action.BOOT_COMPLETED
-ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:23:17-86
+ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:23:17-86
 	android:name
-		ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:23:25-76
+		ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:23:25-76
 receiver#com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
-ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:26:9-106
+ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:26:9-106
 	android:name
-		ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:26:19-103
+		ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:26:19-103
 activity#com.example.crm.MainActivity
-ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:27:9-45:20
+ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:27:9-45:20
 	android:launchMode
-		ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:29:13-43
+		ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:29:13-43
 	android:hardwareAccelerated
-		ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:32:13-47
+		ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:32:13-47
 	android:windowSoftInputMode
-		ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:33:13-55
+		ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:33:13-55
 	android:configChanges
-		ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:31:13-137
+		ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:31:13-137
 	android:theme
-		ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:30:13-47
+		ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:30:13-47
 	android:name
-		ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:28:13-41
+		ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:28:13-41
 meta-data#io.flutter.app.android.SplashScreenUntilFirstFrame
-ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:38:13-40:40
+ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:38:13-40:40
 	android:value
-		ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:40:17-37
+		ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:40:17-37
 	android:name
-		ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:39:17-82
+		ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:39:17-82
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:41:13-44:29
+ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:41:13-44:29
 action#android.intent.action.MAIN
-ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:42:17-68
+ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:42:17-68
 	android:name
-		ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:42:25-66
+		ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:42:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:43:17-76
+ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:43:17-76
 	android:name
-		ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml:43:27-74
+		ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml:43:27-74
 uses-sdk
-INJECTED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml
-INJECTED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml
 MERGED from [androidx.multidex:multidex:2.0.0] /Users/ankush/.gradle/caches/transforms-1/files-1.1/multidex-2.0.0.aar/16a0ae55bc7f0d2b873986070f63f5cb/AndroidManifest.xml:20:5-43
 MERGED from [androidx.multidex:multidex:2.0.0] /Users/ankush/.gradle/caches/transforms-1/files-1.1/multidex-2.0.0.aar/16a0ae55bc7f0d2b873986070f63f5cb/AndroidManifest.xml:20:5-43
-MERGED from [:firebase_messaging] /Users/ankush/Desktop/eldoracrm/crm/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:firebase_messaging] /Users/ankush/Desktop/eldoracrm/crm/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:firebase_auth] /Users/ankush/Desktop/eldoracrm/crm/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:firebase_auth] /Users/ankush/Desktop/eldoracrm/crm/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:url_launcher] /Users/ankush/Desktop/eldoracrm/crm/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:url_launcher] /Users/ankush/Desktop/eldoracrm/crm/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:flutter_local_notifications] /Users/ankush/Desktop/eldoracrm/crm/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:flutter_local_notifications] /Users/ankush/Desktop/eldoracrm/crm/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:cloud_firestore] /Users/ankush/Desktop/eldoracrm/crm/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:cloud_firestore] /Users/ankush/Desktop/eldoracrm/crm/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:firebase_core] /Users/ankush/Desktop/eldoracrm/crm/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:firebase_core] /Users/ankush/Desktop/eldoracrm/crm/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_messaging] /Users/ankush/Desktop/CRM/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_messaging] /Users/ankush/Desktop/CRM/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_auth] /Users/ankush/Desktop/CRM/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_auth] /Users/ankush/Desktop/CRM/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher] /Users/ankush/Desktop/CRM/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher] /Users/ankush/Desktop/CRM/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_local_notifications] /Users/ankush/Desktop/CRM/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_local_notifications] /Users/ankush/Desktop/CRM/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:cloud_firestore] /Users/ankush/Desktop/CRM/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:cloud_firestore] /Users/ankush/Desktop/CRM/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_core] /Users/ankush/Desktop/CRM/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_core] /Users/ankush/Desktop/CRM/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-messaging:17.3.3] /Users/ankush/.gradle/caches/transforms-1/files-1.1/jetified-firebase-messaging-17.3.3.aar/2df61f961b85a7f68457a25995ddbb44/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-messaging:17.3.3] /Users/ankush/.gradle/caches/transforms-1/files-1.1/jetified-firebase-messaging-17.3.3.aar/2df61f961b85a7f68457a25995ddbb44/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-auth:16.0.5] /Users/ankush/.gradle/caches/transforms-1/files-1.1/jetified-firebase-auth-16.0.5.aar/5290631adc7d94c937e6e179c58f8a95/AndroidManifest.xml:21:5-44
@@ -309,44 +309,44 @@ MERGED from [com.google.firebase:protolite-well-known-types:16.0.0] /Users/ankus
 MERGED from [com.google.firebase:protolite-well-known-types:16.0.0] /Users/ankush/.gradle/caches/transforms-1/files-1.1/protolite-well-known-types-16.0.0.aar/fae87b629a13ce6457d4358a3ed1a5b4/AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.3] /Users/ankush/.gradle/caches/transforms-1/files-1.1/play-services-measurement-base-16.0.3.aar/0d4968d88098e9d056981ed554c43dc2/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.3] /Users/ankush/.gradle/caches/transforms-1/files-1.1/play-services-measurement-base-16.0.3.aar/0d4968d88098e9d056981ed554c43dc2/AndroidManifest.xml:5:5-44
-INJECTED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml
-INJECTED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/ankush/Desktop/CRM/android/app/src/main/AndroidManifest.xml
 service#io.flutter.plugins.firebasemessaging.FlutterFirebaseInstanceIDService
-ADDED from [:firebase_messaging] /Users/ankush/Desktop/eldoracrm/crm/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
+ADDED from [:firebase_messaging] /Users/ankush/Desktop/CRM/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
 	android:name
-		ADDED from [:firebase_messaging] /Users/ankush/Desktop/eldoracrm/crm/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:8:18-102
+		ADDED from [:firebase_messaging] /Users/ankush/Desktop/CRM/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:8:18-102
 intent-filter#action:name:com.google.firebase.INSTANCE_ID_EVENT
-ADDED from [:firebase_messaging] /Users/ankush/Desktop/eldoracrm/crm/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:29
+ADDED from [:firebase_messaging] /Users/ankush/Desktop/CRM/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:29
 action#com.google.firebase.INSTANCE_ID_EVENT
-ADDED from [:firebase_messaging] /Users/ankush/Desktop/eldoracrm/crm/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-80
+ADDED from [:firebase_messaging] /Users/ankush/Desktop/CRM/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-80
 	android:name
-		ADDED from [:firebase_messaging] /Users/ankush/Desktop/eldoracrm/crm/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:10:25-77
+		ADDED from [:firebase_messaging] /Users/ankush/Desktop/CRM/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:10:25-77
 service#io.flutter.plugins.firebasemessaging.FlutterFirebaseMessagingService
-ADDED from [:firebase_messaging] /Users/ankush/Desktop/eldoracrm/crm/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:13:9-17:19
+ADDED from [:firebase_messaging] /Users/ankush/Desktop/CRM/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:13:9-17:19
 	android:name
-		ADDED from [:firebase_messaging] /Users/ankush/Desktop/eldoracrm/crm/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:13:18-101
+		ADDED from [:firebase_messaging] /Users/ankush/Desktop/CRM/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:13:18-101
 intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
-ADDED from [:firebase_messaging] /Users/ankush/Desktop/eldoracrm/crm/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-16:29
+ADDED from [:firebase_messaging] /Users/ankush/Desktop/CRM/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-16:29
 action#com.google.firebase.MESSAGING_EVENT
-ADDED from [:firebase_messaging] /Users/ankush/Desktop/eldoracrm/crm/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:15:17-78
+ADDED from [:firebase_messaging] /Users/ankush/Desktop/CRM/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:15:17-78
 	android:name
-		ADDED from [:firebase_messaging] /Users/ankush/Desktop/eldoracrm/crm/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:15:25-75
+		ADDED from [:firebase_messaging] /Users/ankush/Desktop/CRM/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:15:25-75
 activity#io.flutter.plugins.urllauncher.UrlLauncherPlugin$WebViewActivity
-ADDED from [:url_launcher] /Users/ankush/Desktop/eldoracrm/crm/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-11:74
+ADDED from [:url_launcher] /Users/ankush/Desktop/CRM/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-11:74
 	android:exported
-		ADDED from [:url_launcher] /Users/ankush/Desktop/eldoracrm/crm/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-37
+		ADDED from [:url_launcher] /Users/ankush/Desktop/CRM/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-37
 	android:theme
-		ADDED from [:url_launcher] /Users/ankush/Desktop/eldoracrm/crm/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-71
+		ADDED from [:url_launcher] /Users/ankush/Desktop/CRM/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-71
 	android:name
-		ADDED from [:url_launcher] /Users/ankush/Desktop/eldoracrm/crm/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-92
+		ADDED from [:url_launcher] /Users/ankush/Desktop/CRM/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-92
 service#com.google.firebase.messaging.FirebaseMessagingService
 ADDED from [com.google.firebase:firebase-messaging:17.3.3] /Users/ankush/.gradle/caches/transforms-1/files-1.1/jetified-firebase-messaging-17.3.3.aar/2df61f961b85a7f68457a25995ddbb44/AndroidManifest.xml:28:9-34:19
 	android:exported

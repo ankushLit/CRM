@@ -17,7 +17,23 @@ class DatabaseController {
     FirebaseUser user = await _firebaseAuth.currentUser();
     return user.uid;
   }
-
+  static Future<List<String>> getCustomerDetailsToEdit(String cid)async{
+    String uid=await getCurrentUser();
+    List<String> details = new List();
+    await Firestore.instance.collection('customers').where('cid',isEqualTo: cid).snapshots().first.then((doc){
+      //print(d.data['customerName']);
+      doc.documents.forEach((d){
+        details.add(d.data['customerName']);
+        details.add(d.data['email']);
+        details.add(d.data['address']);
+        details.add(d.data['contactNumber']);
+        details.add(d.data['status']);
+        details.add(d.data['addressLine2']);
+      });
+      print(details);
+    });
+    return details;
+  }
   static dynamic customerInfo(BuildContext context,String uid)  {
     return StreamBuilder(
         stream: Firestore.instance.collection('customers').where('uid',isEqualTo: uid).snapshots(),
@@ -33,7 +49,8 @@ class DatabaseController {
               return CustomerCard(
                   snapshot.data.documents[snapshot.data.documents.length-index-1]['status'],
                   snapshot.data.documents[snapshot.data.documents.length-index-1]['customerName'],
-                  snapshot.data.documents[snapshot.data.documents.length-index-1]['address'],
+                  snapshot.data.documents[snapshot.data.documents.length-index-1]['address']+
+                      snapshot.data.documents[snapshot.data.documents.length-index-1]['addressLine2'],
                   snapshot.data.documents[snapshot.data.documents.length-index-1]['contactNumber'],
                   snapshot.data.documents[snapshot.data.documents.length-index-1]['location'],
                   snapshot.data.documents[snapshot.data.documents.length-index-1]['cid']);
@@ -198,7 +215,34 @@ class DatabaseController {
           notificationDetails
       );
     }
-    static void addCustomerSave(String name,String phoneNumber,String email,String address,String clientStatus)async{
+  static void editCustomerSave(String name,String phoneNumber,String email,String address,String clientStatus,String al2,String cid)async{
+    FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+    FirebaseUser user = await _firebaseAuth.currentUser();
+    String uid= user.uid;
+    print("Client Name: "+ name);
+    print("Phone: Number: "+ phoneNumber);
+    print("Email: "+ email);
+    print("Add: "+ address);
+    print("status: "+clientStatus);
+    var snap=Firestore.instance.collection('customers').getDocuments().then((s){
+      print(s.documents.length);
+    });
+    var x= await Firestore.instance.collection('customers').where('cid',isEqualTo: cid).getDocuments().then((qs){
+      qs.documents.forEach((doc){
+        Firestore.instance.collection('customers').document(doc.documentID).updateData({
+          'uid':uid,
+          'address':address,
+          'addressLine2':al2,
+          'customerName':name,
+          'contactNumber':phoneNumber,
+          'email':email,
+          'status':clientStatus.toLowerCase()
+        });
+      });
+    });
+
+  }
+    static void addCustomerSave(String name,String phoneNumber,String email,String address,String clientStatus,String al2)async{
       FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
       FirebaseUser user = await _firebaseAuth.currentUser();
       String uid= user.uid;
@@ -216,6 +260,7 @@ class DatabaseController {
         'uid':uid,
         'cid':nid,
         'address':address,
+        'addressLine2':al2,
         'customerName':name,
         'contactNumber':phoneNumber,
         'email':email,

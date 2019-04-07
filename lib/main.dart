@@ -1,11 +1,4 @@
-import 'package:crm/pages/login_page.dart';
-import 'package:crm/pages/second_page.dart';
-import 'package:crm/pages/third_page.dart';
-import 'package:crm/tabs/list_page.dart';
-import 'package:crm/pages/client_information_data_page.dart';
-import 'package:crm/pages/second_page.dart';
 import 'package:flutter/material.dart';
-import 'package:crm/pages/dash_board.dart';
 
 import 'package:crm/controllers/login_controller.dart';
 import 'package:crm/pages/loadingPage.dart';
@@ -25,7 +18,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => LoadingPage(auth: new LoginController()),
 //        '/': (context) => ClientInfo(),
         // When we navigate to the "/second" route, build the SecondScreen Widget
-        '/second': (context) => SecondScreen(),
+//        '/second': (context) => SecondScreen(),
       },
       title: 'Eldora Power CRM',
       theme: ThemeData(

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/ankush/Desktop/eldoracrm/crm/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/Users/ankush/Desktop/CRM/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
                     "source": "/Users/ankush/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-16.0.1.aar/5086fa682289777a2eb35eca4c464907/res/values/values.xml",
@@ -37,6 +37,42 @@
                         "startOffsets": "969,1058,1187,2800,2853,2906,2959,3502,7624,7800,7922,8184,8379",
                         "endColumns": "88,70,72,52,52,52,52,59,65,121,60,65,66",
                         "endOffsets": "1053,1124,1255,2848,2901,2954,3007,3557,7685,7917,7978,8245,8441"
+                    }
+                },
+                {
+                    "source": "/Users/ankush/Desktop/CRM/build/app/generated/res/google-services/debug/values/values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,199,304,386,490,593,713,807",
+                        "endColumns": "143,104,81,103,102,119,93,70",
+                        "endOffsets": "194,299,381,485,588,708,802,873"
+                    },
+                    "to": {
+                        "startLines": "75,77,78,79,80,81,82,83",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "6033,6259,6364,6446,6550,6653,6773,6867",
+                        "endColumns": "143,104,81,103,102,119,93,70",
+                        "endOffsets": "6172,6359,6441,6545,6648,6768,6862,6933"
+                    }
+                },
+                {
+                    "source": "/Users/ankush/Desktop/CRM/android/app/src/main/res/values/styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "347"
+                    },
+                    "to": {
+                        "startLines": "85",
+                        "startColumns": "4",
+                        "startOffsets": "7009",
+                        "endLines": "89",
+                        "endColumns": "12",
+                        "endOffsets": "7301"
                     }
                 },
                 {
@@ -95,23 +131,6 @@
                     }
                 },
                 {
-                    "source": "/Users/ankush/Desktop/eldoracrm/crm/build/app/generated/res/google-services/debug/values/values.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,199,304,386,490,593,713,807",
-                        "endColumns": "143,104,81,103,102,119,93,70",
-                        "endOffsets": "194,299,381,485,588,708,802,873"
-                    },
-                    "to": {
-                        "startLines": "75,77,78,79,80,81,82,83",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "6033,6259,6364,6446,6550,6653,6773,6867",
-                        "endColumns": "143,104,81,103,102,119,93,70",
-                        "endOffsets": "6172,6359,6441,6545,6648,6768,6862,6933"
-                    }
-                },
-                {
                     "source": "/Users/ankush/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-16.1.0.aar/07e785df8bf8fb1ae626d19a7deceb06/res/values/values.xml",
                     "from": {
                         "startLines": "4,7",
@@ -126,25 +145,6 @@
                         "startOffsets": "3562,4740",
                         "endColumns": "67,166",
                         "endOffsets": "3625,4902"
-                    }
-                },
-                {
-                    "source": "/Users/ankush/Desktop/eldoracrm/crm/android/app/src/main/res/values/styles.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "347"
-                    },
-                    "to": {
-                        "startLines": "85",
-                        "startColumns": "4",
-                        "startOffsets": "7009",
-                        "endLines": "89",
-                        "endColumns": "12",
-                        "endOffsets": "7301"
                     }
                 }
             ]
