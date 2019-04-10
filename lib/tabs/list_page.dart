@@ -1,4 +1,3 @@
-import 'package:crm/model/customer.dart';
 import 'package:flutter/material.dart';
 import 'package:crm/style/theme.dart' as Theme;
 import 'package:crm/controllers/database_controller.dart';
@@ -27,7 +26,6 @@ class _ListPageState extends State<ListPage> with SingleTickerProviderStateMixin
     setState((){
       uid = temp;
     });
-    //print("from list page: "+uid);
   }
   @override
   Widget build(BuildContext context) {
@@ -63,7 +61,6 @@ class _ListPageState extends State<ListPage> with SingleTickerProviderStateMixin
         ));
 
     return Scaffold(
-        //backgroundColor: Color.fromRGBO(58, 66, 86, 1.0),
         body: makeBody,
         floatingActionButton: new FloatingActionButton(
             onPressed: () {
@@ -74,86 +71,3 @@ class _ListPageState extends State<ListPage> with SingleTickerProviderStateMixin
     );
   }
 }
-
-
-
-/*List getCustomers() {
-  return [
-    Customer(
-        name: "Ankush Karkar",
-        statusColor: "red",
-        clientStatus: "Hot",
-        phoneNumber: "9033449415",
-        indicatorValue: 0.33,
-        price: 20,
-        remark:
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed."),
-    Customer(
-        name: "Maharsh Patel",
-        statusColor: "red",
-        clientStatus: "Hot",
-        phoneNumber: "8128202814",
-        indicatorValue: 0.33,
-        price: 50,
-        remark:
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed."),
-    Customer(
-        name: "Harshyam Jadeja",
-        statusColor: "yellow",
-        phoneNumber: "9879612070",
-        clientStatus: "Medium",
-        indicatorValue: 0.66,
-        price: 30,
-        remark:
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed."),
-    Customer(
-        name: "ICKU Shah",
-        statusColor: "yellow",
-        phoneNumber: "9727972479",
-        clientStatus: "Medium",
-        indicatorValue: 0.66,
-        price: 30,
-        remark:
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed."),
-    Customer(
-        name: "Kalpit Modi",
-        statusColor: "blue",
-        clientStatus: "Cold",
-        indicatorValue: 1.0,
-        price: 50,
-        remark:
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed."),
-    Customer(
-        name: "Ankur Karkar",
-        statusColor: "blue",
-        clientStatus: "Cold",
-        indicatorValue: 1.0,
-        price: 50,
-        remark:
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed."),
-    Customer(
-        name: "Observation at Junctions",
-        statusColor: "black",
-        clientStatus: "Not Interested",
-        indicatorValue: 0.33,
-        price: 50,
-        remark:
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed."),
-    Customer(
-        name: "Reverse parallel Parking",
-        statusColor: "yellow",
-        clientStatus: "Medium",
-        indicatorValue: 0.66,
-        price: 30,
-        remark:
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed."),
-    Customer(
-        name: "Self Driving Car",
-        statusColor: "black",
-        clientStatus: "Not Interested",
-        indicatorValue: 1.0,
-        price: 50,
-        remark:
-            "Start by taking a couple of minutes to read the info in this section. Launch your app and click on the Settings menu.  While on the settings page, click the Save button.  You should see a circular progress indicator display in the middle of the page and the user interface elements cannot be clicked due to the modal barrier that is constructed.  ")
-  ];
-}*/

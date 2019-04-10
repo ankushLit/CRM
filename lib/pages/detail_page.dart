@@ -1,4 +1,3 @@
-import 'package:crm/model/customer.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:crm/components/picker.dart';
@@ -21,12 +20,10 @@ class DetailPage extends StatefulWidget {
 }
 
   class _State extends State<DetailPage>{
-    DateTimePicker _picker;
     FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
 
     @override
     void initState() {
-      _picker = new DateTimePicker();
       flutterLocalNotificationsPlugin = new FlutterLocalNotificationsPlugin();
       var android = new AndroidInitializationSettings('@mipmap/ic_launcher');
       var ios = new IOSInitializationSettings();

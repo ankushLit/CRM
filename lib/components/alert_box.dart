@@ -18,7 +18,6 @@ class AddEntryDialogState extends State<AddEntryDialog> {
     print(widget.whereFrom);
     _currentStatus='Hot';
     check();
-    //widget.customer.clientStatus=_currentStatus;
     super.initState();
   }
   String _currentStatus;
@@ -77,8 +76,6 @@ class AddEntryDialogState extends State<AddEntryDialog> {
           new FlatButton(
               onPressed: () {
                 _validateInputs();
-                //widget.customer.clientStatus=_currentStatus;
-                //widget.customer.address+='`'+line2.text;
                 if(widget.whereFrom){
                   print(widget.cid);
                   DatabaseController.editCustomerSave(
@@ -167,10 +164,8 @@ class AddEntryDialogState extends State<AddEntryDialog> {
                 new ListTile(
                   leading: new Image(image: new AssetImage('assets/icons/'+_currentStatus.toLowerCase()+'.png')),
                   title: const Text('Status'),
-                  //subtitle: const Text('status'),
                 ),
                 new ListTile(
-                  //leading: new Image(image: new AssetImage('assets/icons/'+_currentStatus.toLowerCase()+'.png')),
                   title:new Column(
                     children: <Widget>[
                       new Row(
@@ -198,21 +193,13 @@ class AddEntryDialogState extends State<AddEntryDialog> {
                         ],
                       ),
                     ],
-                  )
-                  /*new DropdownButton(
-                    value: _currentStatus,
-                    items: _dropDownMenuItems,
-                    onChanged: changedDropDownItem
-            )*/,
-                  // subtitle: const Text('status'),
+                ),
                 ),
                 new ListTile(
                   leading: const Icon(Icons.add_location),
                   title: const Text('Address'),
-                  //subtitle: const Text('status'),
                 ),
                 new ListTile(
-                  //leading: const Icon(Icons.add_location),
                     title: new TextFormField(
                       controller: _addressController,
                       decoration: new InputDecoration(
@@ -228,7 +215,6 @@ class AddEntryDialogState extends State<AddEntryDialog> {
                     )
                 ),
                 new ListTile(
-                  //leading: const Icon(Icons.add_location),
                     title: new TextFormField(
                       decoration: new InputDecoration(
                         labelText: "Line 2 (optional)",
@@ -240,111 +226,11 @@ class AddEntryDialogState extends State<AddEntryDialog> {
                           _addressLine2=s;
                         });
                       },
-//                onChanged: assignAddressLineTwo,
                     )
                 )
               ],
             ),
           ),
-//          new ListTile(
-//            leading: const Icon(Icons.person),
-//            title: new TextField(
-//              decoration: new InputDecoration(
-//                hintText: "Name",
-//              ),
-//              onChanged: assignName,
-//            ),
-//          ),
-//          new ListTile(
-//            leading: const Icon(Icons.phone),
-//            title: new TextField(
-//              keyboardType: TextInputType.numberWithOptions(),
-//              decoration: new InputDecoration(
-//                hintText: "Phone",
-//              ),
-//              onChanged: assignPhoneNumber,
-//            ),
-//          ),
-//          new ListTile(
-//            leading: const Icon(Icons.email),
-//            title: new TextField(
-//              decoration: new InputDecoration(
-//                hintText: "Email",
-//              ),
-//              onChanged: assignEmail,
-//            ),
-//          ),
-//          const Divider(
-//            height: 3.0,
-//          ),
-//          new ListTile(
-//            leading: new Image(image: new AssetImage('assets/icons/'+_currentStatus.toLowerCase()+'.png')),
-//            title: const Text('Status'),
-//            //subtitle: const Text('status'),
-//          ),
-//          new ListTile(
-//           //leading: new Image(image: new AssetImage('assets/icons/'+_currentStatus.toLowerCase()+'.png')),
-//            title:new Column(
-//              children: <Widget>[
-//                new Row(
-//                  children: <Widget>[
-//                    new Radio(value: 'Hot', groupValue: _currentStatus, onChanged: (String s)=>getStatus(s),activeColor: Colors.red),
-//                    new Text('Hot'),
-//                  ],
-//                ),
-//                new Row(
-//                  children: <Widget>[
-//                    new Radio(value: 'Medium', groupValue: _currentStatus, onChanged: (String s)=>getStatus(s),activeColor: Colors.yellow ),
-//                    new Text('Medium'),
-//                  ],
-//                ),
-//                new Row(
-//                  children: <Widget>[
-//                    new Radio(value: 'Cold', groupValue: _currentStatus, onChanged: (String s)=>getStatus(s),activeColor: Colors.blue ),
-//                    new Text('Cold'),
-//                  ],
-//                ),
-//                new Row(
-//                  children: <Widget>[
-//                    new Radio(value: 'Disinterested', groupValue: _currentStatus, onChanged: (String s)=>getStatus(s),activeColor: Colors.black ),
-//                    new Text('Not Interested'),
-//                  ],
-//                ),
-//              ],
-//            )
-//            /*new DropdownButton(
-//                    value: _currentStatus,
-//                    items: _dropDownMenuItems,
-//                    onChanged: changedDropDownItem
-//            )*/,
-//           // subtitle: const Text('status'),
-//          ),
-//          new ListTile(
-//            leading: const Icon(Icons.add_location),
-//            title: const Text('Address'),
-//            //subtitle: const Text('status'),
-//          ),
-//          new ListTile(
-//            //leading: const Icon(Icons.add_location),
-//            title: new TextField(
-//                  decoration: new InputDecoration(
-//                      hintText: "Line 1",
-//                      border: OutlineInputBorder(),
-//                  ),
-//              onChanged: assignAddressLineOne,
-//            )
-//          ),
-//          new ListTile(
-//              //leading: const Icon(Icons.add_location),
-//              title: new TextField(
-//                  decoration: new InputDecoration(
-//                    hintText: "Line 2 (optional)",
-//                    border: OutlineInputBorder(),
-//                  ),
-//                  controller: line2,
-////                onChanged: assignAddressLineTwo,
-//              )
-//          )
         ],
       ),
     )
@@ -373,7 +259,6 @@ class AddEntryDialogState extends State<AddEntryDialog> {
         _currentStatus='Disinterested';
       }
     });
-    //widget.customer.clientStatus=_currentStatus;
     print(_currentStatus);
   }
   String assignName(String s){

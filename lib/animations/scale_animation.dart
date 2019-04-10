@@ -26,7 +26,6 @@ class _ScaleAnimationState extends State<ScaleAnimation>
     return new ScaleTransition(
         scale: new CurvedAnimation(
             parent: _animationController, curve: Curves.easeOut),
-        //opacity: _animation,
         child: widget.child);
   }
 }

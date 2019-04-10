@@ -17,23 +17,6 @@ class DetailsBottomSheet{
               contactNumber,
               location,
               cid);
-
-          /*Container(
-            child: new Wrap(
-              children: <Widget>[
-                new ListTile(
-                    leading: new Icon(Icons.music_note),
-                    title: new Text('Music'),
-                    onTap: () => {}
-                ),
-                new ListTile(
-                  leading: new Icon(Icons.videocam),
-                  title: new Text('Video'),
-                  onTap: () => {},
-                ),
-              ],
-            ),
-          );*/
         }
     );
   }

@@ -1,7 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-
 import 'dart:async';
 
 abstract class BaseAuth {
@@ -13,12 +11,10 @@ abstract class BaseAuth {
   Future<String> currentUser();
   Future<void> signOut();
   Future<String> getName();
-//  Future<void> getToken();
 }
 
 class LoginController implements BaseAuth {
   FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-//  final FirebaseMessaging _messaging=FirebaseMessaging();
 
   Future<String> userLogin(
       BuildContext context, String loginEmail, String loginPassword) async {
@@ -73,9 +69,4 @@ class LoginController implements BaseAuth {
     await _firebaseAuth.sendPasswordResetEmail(email: resetEmail);
     return 'Recovery Email Sent to: \n $resetEmail';
   }
-  /*Future<void> getToken(){
-    _messaging.getToken().then((token){
-      print(token);
-    });
-  }*/
 }

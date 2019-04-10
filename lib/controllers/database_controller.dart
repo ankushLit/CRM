@@ -8,7 +8,6 @@ import 'dart:math';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:crm/components/remarks_card.dart';
-import 'package:crm/model/customer.dart';
 
 
 class DatabaseController {
@@ -18,10 +17,8 @@ class DatabaseController {
     return user.uid;
   }
   static Future<List<String>> getCustomerDetailsToEdit(String cid)async{
-    String uid=await getCurrentUser();
     List<String> details = new List();
     await Firestore.instance.collection('customers').where('cid',isEqualTo: cid).snapshots().first.then((doc){
-      //print(d.data['customerName']);
       doc.documents.forEach((d){
         details.add(d.data['customerName']);
         details.add(d.data['email']);
@@ -49,7 +46,7 @@ class DatabaseController {
               return CustomerCard(
                   snapshot.data.documents[snapshot.data.documents.length-index-1]['status'],
                   snapshot.data.documents[snapshot.data.documents.length-index-1]['customerName'],
-                  snapshot.data.documents[snapshot.data.documents.length-index-1]['address']+
+                  snapshot.data.documents[snapshot.data.documents.length-index-1]['address']+', '+
                       snapshot.data.documents[snapshot.data.documents.length-index-1]['addressLine2'],
                   snapshot.data.documents[snapshot.data.documents.length-index-1]['contactNumber'],
                   snapshot.data.documents[snapshot.data.documents.length-index-1]['location'],
@@ -152,43 +149,6 @@ class DatabaseController {
                     snapshot.data.documents[index]['status'],
                     snapshot.data.documents[index]['name'],
                     snapshot.data.documents[index]['cid'],
-                 /*   (){
-                      print(index);
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      // return object of type AlertDialog
-                      return AlertDialog(
-                        title: new Text("Follow up Status"),
-                        content: new Text("Mark as completed"),
-                        actions: <Widget>[
-                          // usually buttons at the bottom of the dialog
-                          new FlatButton(
-                            child: new Text("Complete"),
-                            onPressed: () {
-                              int i=index+1;
-                              print('index: '+(i).toString());
-                              Firestore.instance
-                                  .collection('Notifications')
-                              .document(i.toString())
-                              .updateData({
-                                "name": snapshot.data.documents[index]['name'],
-                                "status": 'complete'
-                              });
-                              Navigator.of(context).pop();
-                            },
-                          ),
-                          new FlatButton(
-                            child: new Text("Close"),
-                            onPressed: () {
-                              Navigator.of(context).pop();
-                            },
-                          ),
-                        ],
-                      );
-                    },
-                  );
-                }*/
                     );
               },
             );
@@ -204,8 +164,6 @@ class DatabaseController {
           channelAction: AndroidNotificationChannelAction.CreateIfNotExists);
       var ios= new IOSNotificationDetails();
       var notificationDetails=new NotificationDetails(android, ios);
-//        var scheduledNotificationDateTime =
-//        new DateTime.now().add(new Duration(seconds: 5));
       print(date);
       await f.schedule(
           x,
@@ -224,9 +182,9 @@ class DatabaseController {
     print("Email: "+ email);
     print("Add: "+ address);
     print("status: "+clientStatus);
-    var snap=Firestore.instance.collection('customers').getDocuments().then((s){
+   /* var snap=Firestore.instance.collection('customers').getDocuments().then((s){
       print(s.documents.length);
-    });
+    });*/ //get length of documents.
     var x= await Firestore.instance.collection('customers').where('cid',isEqualTo: cid).getDocuments().then((qs){
       qs.documents.forEach((doc){
         Firestore.instance.collection('customers').document(doc.documentID).updateData({
@@ -253,9 +211,6 @@ class DatabaseController {
       print("status: "+clientStatus);
       var uuid = new Uuid();
       String nid=uuid.v1();
-      var snap=Firestore.instance.collection('customers').getDocuments().then((s){
-        print(s.documents.length);
-      });
       Firestore.instance.collection('customers').document().setData({
         'uid':uid,
         'cid':nid,
@@ -320,18 +275,6 @@ class DatabaseController {
                                     .updateData({
                                   "status": 'complete'
                                 });
-                                /*Firestore.instance
-                                    .collection('Notifications')
-                                    .document(cid)
-                                    .collection('customerSpecific')
-                                    .document(i.toString())
-                                    .get().then((c){
-                                      if(c.exists){
-                                        String lnid=c.data['lnid'];
-
-                                      }
-                                });*/
-
                                 if(c.text!="") {
                                   Firestore.instance
                                       .collection('Notifications')

@@ -99,11 +99,9 @@ class _DashBoardState extends State<DashBoard>
             title: new Text("Sign Out"),
             leading: new Icon(Icons.clear),
             onTap: _signedOut,
-//            leading: new Image(image: new AssetImage('assets/icons/logout.png')),
           ),
           new ListTile(
             title: new Text("Sign Out"),
-//            leading: new Icon(Icons.clear),
             leading:
                 new Image(image: new AssetImage('assets/icons/logout.png')),
           )
@@ -125,8 +123,6 @@ class _DashBoardState extends State<DashBoard>
   }
 
   void _onItemTapped(int index) {
-//    print("AYA");
-//    widget.auth.getToken();
     setState(() {
       _selectedIndex = index;
       currentTab = tabs[index];

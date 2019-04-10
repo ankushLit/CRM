@@ -1,6 +1,4 @@
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter/material.dart';
-import 'package:crm/components/card_blocks.dart';
 import 'package:crm/controllers/database_controller.dart';
 import 'package:crm/style/theme.dart' as Theme;
 
@@ -17,7 +15,6 @@ class _NotificationTabState extends State<NotificationTab> {
     setState((){
       uid = temp;
     });
-    //print("from list page: "+uid);
   }
 
   @override

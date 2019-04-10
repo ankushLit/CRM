@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:crm/model/customer.dart';
-import 'package:crm/pages/detail_page.dart';
 import 'package:crm/animations/scale_animation.dart';
 import 'customerDetailsFromBottom.dart';
 class CustomerCard extends StatelessWidget{
@@ -30,21 +28,10 @@ class CustomerCard extends StatelessWidget{
         customerName,
         style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
       ),
-      // subtitle: Text("Intermediate", style: TextStyle(color: Colors.white)),
 
       subtitle: Row(
         children: <Widget>[
-//              Expanded(
-//                  flex: 1,
-//                  child: Container(
-//                    // tag: 'hero',
-//                    child: LinearProgressIndicator(
-//                        backgroundColor: Color.fromRGBO(209, 224, 224, 0.2),
-//                        value: lesson.indicatorValue,
-//                        valueColor: AlwaysStoppedAnimation(Colors.green)),
-//                  )), Commented ProgressBar
           Expanded(
-//                flex: 4,
             child: Padding(
                 padding: EdgeInsets.only(left: 0.0),
                 child: Text('Client Status: '+status,
@@ -61,17 +48,6 @@ class CustomerCard extends StatelessWidget{
             contactNumber,
             location,
             cid);
-        /*Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => DetailPage(status,
-                    customerName,
-                    address,
-                    contactNumber,
-                    location,
-                cid)
-        )
-        );*/
         },
     );
 
@@ -80,7 +56,6 @@ class CustomerCard extends StatelessWidget{
       margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
       child: Container(
         decoration: BoxDecoration(color: Color.fromRGBO(255, 255, 255, .9)),
-//            decoration: BoxDecoration(color: Color.fromRGBO(64, 75, 96, .9)),
         child: makeListTile(),
       ),
     )

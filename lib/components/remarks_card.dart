@@ -21,17 +21,7 @@ class RemarksCard extends StatelessWidget{
         ),
         subtitle: Row(
           children: <Widget>[
-//              Expanded(
-//                  flex: 1,
-//                  child: Container(
-//                    // tag: 'hero',
-//                    child: LinearProgressIndicator(
-//                        backgroundColor: Color.fromRGBO(209, 224, 224, 0.2),
-//                        value: lesson.indicatorValue,
-//                        valueColor: AlwaysStoppedAnimation(Colors.green)),
-//                  )), Commented ProgressBar
             Expanded(
-//                flex: 4,
               child: Padding(
                   padding: EdgeInsets.only(left: 0.0),
                   child: Text('Time: '+date[1].substring(0,5)+'\nClient remarks: '+remarks,
@@ -45,7 +35,6 @@ class RemarksCard extends StatelessWidget{
       margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
       child: Container(
         decoration: BoxDecoration(color: Color.fromRGBO(255, 255, 255, .9)),
-//            decoration: BoxDecoration(color: Color.fromRGBO(64, 75, 96, .9)),
         child: makeListTile(),
       ),
     )

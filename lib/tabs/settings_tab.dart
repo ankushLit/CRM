@@ -1,7 +1,6 @@
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter/material.dart';
 import 'package:crm/controllers/login_controller.dart';
-import 'package:crm/components/card_blocks.dart';
 
 class SettingsTab extends StatefulWidget {
   final BaseAuth auth;

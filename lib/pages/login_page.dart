@@ -4,7 +4,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:crm/style/theme.dart' as Theme;
 import 'package:crm/components/bubble_indication_painter.dart';
 import 'package:crm/controllers/login_controller.dart';
-import 'package:crm/components/alert_box.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({this.auth, this.onSignedIn, this.onSignedOut});
@@ -57,7 +56,6 @@ class _LoginPageState extends State<LoginPage>
   Color right = Colors.white;
 
   String _email;
-  String _resetPasswordEmail;
   String _password;
   String _signupEmail;
   String _signupPassword;
@@ -213,7 +211,6 @@ class _LoginPageState extends State<LoginPage>
                 ),
               ),
             ),
-            //Container(height: 33.0, width: 1.0, color: Colors.white),
             Expanded(
               child: FlatButton(
                 splashColor: Colors.transparent,
@@ -589,7 +586,6 @@ class _LoginPageState extends State<LoginPage>
                 child: MaterialButton(
                   highlightColor: Colors.transparent,
                   splashColor: Theme.Colors.loginGradientEnd,
-                  //shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5.0))),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
                         vertical: 10.0, horizontal: 42.0),
@@ -645,7 +641,6 @@ class _LoginPageState extends State<LoginPage>
                         register();
                       }
                     });
-                    //showInSnackBar("SignUp button pressed");
                   },
                 ),
               ),
