@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' as prefix0;
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:crm/style/theme.dart' as Theme;
@@ -36,17 +37,23 @@ class _LoginPageState extends State<LoginPage>
   final FocusNode myFocusNodeEmail = FocusNode();
   final FocusNode myFocusNodeName = FocusNode();
 
-  final TextEditingController loginEmailController = new TextEditingController();
-  final TextEditingController loginPasswordController = new TextEditingController();
-  final TextEditingController resetPasswordController= new TextEditingController();
+  final TextEditingController loginEmailController =
+      new TextEditingController();
+  final TextEditingController loginPasswordController =
+      new TextEditingController();
+  final TextEditingController resetPasswordController =
+      new TextEditingController();
 
   bool _obscureTextLogin = true;
   bool _obscureTextSignup = true;
   bool _obscureTextSignupConfirm = true;
 
-  final TextEditingController signupEmailController = new TextEditingController();
-  final TextEditingController signupNameController = new TextEditingController();
-  final TextEditingController signupPasswordController = new TextEditingController();
+  final TextEditingController signupEmailController =
+      new TextEditingController();
+  final TextEditingController signupNameController =
+      new TextEditingController();
+  final TextEditingController signupPasswordController =
+      new TextEditingController();
   final TextEditingController signupConfirmPasswordController =
       new TextEditingController();
 
@@ -76,6 +83,7 @@ class _LoginPageState extends State<LoginPage>
     signupNameController.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -108,9 +116,9 @@ class _LoginPageState extends State<LoginPage>
                   padding: EdgeInsets.only(top: 175.0),
                   child: new Image(
                       width: 250.0,
-                      height: 111.0,
+                      height: 170.0,
                       fit: BoxFit.fill,
-                      image: new AssetImage('assets/img/eldora_logo.png')),
+                      image: new AssetImage('assets/img/frelit.png')),
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 20.0),
@@ -152,8 +160,6 @@ class _LoginPageState extends State<LoginPage>
       ),
     );
   }
-
-
 
   @override
   void initState() {
@@ -401,7 +407,8 @@ class _LoginPageState extends State<LoginPage>
   }
 
   Widget _buildSignUp(BuildContext context) {
-    return Container(
+    return prefix0.SingleChildScrollView(
+        child: Container(
       padding: EdgeInsets.only(top: 23.0),
       child: Column(
         children: <Widget>[
@@ -648,7 +655,7 @@ class _LoginPageState extends State<LoginPage>
           ),
         ],
       ),
-    );
+    ));
   }
 
   void login() async {
@@ -665,20 +672,20 @@ class _LoginPageState extends State<LoginPage>
       showInSnackBar(e.message);
     }
   }
-  void _resetPassword() async{
+
+  void _resetPassword() async {
     print('ohh yeah');
-    if(!resetPasswordController.text.isEmpty) {
+    if (!resetPasswordController.text.isEmpty) {
       try {
         await widget.auth.sendResetPasswordEmail(resetPasswordController.text);
       } on PlatformException catch (e) {
         showInSnackBar(e.message);
       }
+    } else {
+      showInSnackBar('Please Enter Email');
     }
-    else
-      {
-        showInSnackBar('Please Enter Email');
-      }
   }
+
   void _signedOut() async {
     try {
       await widget.auth.signOut();
@@ -741,8 +748,7 @@ class _LoginPageState extends State<LoginPage>
                 fontSize: 16.0,
                 color: Colors.black),
             decoration: InputDecoration(
-              labelText:
-              _validateResetEmail ? 'Please Enter Email' : null,
+              labelText: _validateResetEmail ? 'Please Enter Email' : null,
               labelStyle: TextStyle(
                   fontFamily: "WorkSansSemiBold",
                   fontSize: 14.0,
@@ -754,8 +760,8 @@ class _LoginPageState extends State<LoginPage>
                 size: 22.0,
               ),
               hintText: "Email Address",
-              hintStyle: TextStyle(
-                  fontFamily: "WorkSansSemiBold", fontSize: 17.0),
+              hintStyle:
+                  TextStyle(fontFamily: "WorkSansSemiBold", fontSize: 17.0),
             ),
           ),
           actions: <Widget>[
@@ -778,5 +784,4 @@ class _LoginPageState extends State<LoginPage>
       },
     );
   }
-
 }

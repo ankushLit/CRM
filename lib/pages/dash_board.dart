@@ -4,6 +4,9 @@ import 'package:crm/tabs/settings_tab.dart';
 import 'package:crm/tabs/list_page.dart';
 import 'package:crm/controllers/login_controller.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'about_us.dart';
+import 'searchPage.dart';
+
 class DashBoard extends StatefulWidget {
   _DashBoardState createState() => _DashBoardState();
 
@@ -22,7 +25,12 @@ class _DashBoardState extends State<DashBoard>
       print(e.toString());
     }
   }
- /* void addname() async{
+
+  void _aboutUs() {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => AboutUs()));
+  }
+
+  /* void addname() async{
     UserUpdateInfo i=new UserUpdateInfo();
     i.displayName='Harshyam';
     var user =await FirebaseAuth.instance.currentUser();
@@ -54,12 +62,13 @@ class _DashBoardState extends State<DashBoard>
   List<Widget> tabs;
   String userName;
 
-  void setName() async{
-    String temp=await widget.auth.getName();
+  void setName() async {
+    String temp = await widget.auth.getName();
     setState(() {
-      userName=temp;
+      userName = temp;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,10 +81,12 @@ class _DashBoardState extends State<DashBoard>
         ),
         actions: <Widget>[
           IconButton(
-              icon: Icon(Icons.search),
-              onPressed: () {
-                showSearch(context: context, delegate: SearchData());
-              })
+            icon: Icon(Icons.search),
+            onPressed: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => SearchPage()));
+            },
+          )
         ],
         backgroundColor: Color(0xFFF2CB1D),
       ),
@@ -83,8 +94,8 @@ class _DashBoardState extends State<DashBoard>
         child: new Column(children: <Widget>[
           new UserAccountsDrawerHeader(
             accountName: new Text(
-              userName,
-              style: TextStyle(color: Colors.black),
+              userName == null ? "Frelit" : userName,
+              style: TextStyle(color: Colors.black, fontSize: 20.0),
             ),
             accountEmail: null,
             decoration: new BoxDecoration(
@@ -92,19 +103,15 @@ class _DashBoardState extends State<DashBoard>
             ),
           ),
           new ListTile(
-            title: new Text("About Us"),
-            leading: new Icon(Icons.info),
-          ),
-          new ListTile(
             title: new Text("Sign Out"),
             leading: new Icon(Icons.clear),
             onTap: _signedOut,
           ),
           new ListTile(
-            title: new Text("Sign Out"),
-            leading:
-                new Image(image: new AssetImage('assets/icons/logout.png')),
-          )
+            title: new Text("About Us"),
+            leading: new Icon(Icons.info),
+            onTap: _aboutUs,
+          ),
         ]),
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -127,43 +134,5 @@ class _DashBoardState extends State<DashBoard>
       _selectedIndex = index;
       currentTab = tabs[index];
     });
-
-  }
-}
-
-
-
-class SearchData extends SearchDelegate<String> {
-  @override
-  List<Widget> buildActions(BuildContext context) {
-    return [
-      IconButton(
-          icon: Icon(Icons.clear),
-          onPressed: () {
-            Navigator.pop(context);
-          })
-    ];
-  }
-
-  @override
-  Widget buildLeading(BuildContext context) {
-    return IconButton(
-      icon: AnimatedIcon(
-          icon: AnimatedIcons.ellipsis_search, progress: transitionAnimation),
-      onPressed: () {},
-    );
-  }
-
-  @override
-  Widget buildResults(BuildContext context) {
-    // TODO: implement buildResults
-    return null;
-  }
-
-  @override
-  Widget buildSuggestions(BuildContext context) {
-    return new Container(
-      child: new Text("I am here"),
-    );
   }
 }

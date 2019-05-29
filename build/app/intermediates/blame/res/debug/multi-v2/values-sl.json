@@ -4,6 +4,23 @@
             "outputFile": "/Users/ankush/Desktop/CRM/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-sl/values-sl.xml",
             "map": [
                 {
+                    "source": "/Users/ankush/.gradle/caches/transforms-1/files-1.1/jetified-firebase-messaging-17.3.3.aar/384f77833342e1045ca6e5bf016f8df4/res/values-sl/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "205",
+                        "endColumns": "99",
+                        "endOffsets": "304"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "2818",
+                        "endColumns": "103",
+                        "endOffsets": "2917"
+                    }
+                },
+                {
                     "source": "/Users/ankush/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/7b0be3a4d11a481e2837c889237ae045/res/values-sl/values-sl.xml",
                     "from": {
                         "startLines": "2",
@@ -21,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/Users/ankush/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-16.0.1.aar/5086fa682289777a2eb35eca4c464907/res/values-sl/values.xml",
+                    "source": "/Users/ankush/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-16.0.1.aar/2e85b4a07eac8811ab65fe080c9c6e64/res/values-sl/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -38,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "/Users/ankush/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-16.1.0.aar/07e785df8bf8fb1ae626d19a7deceb06/res/values-sl/values.xml",
+                    "source": "/Users/ankush/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-16.1.0.aar/0be5fb2f325c155aa2541df3c0709d99/res/values-sl/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -52,23 +69,6 @@
                         "startOffsets": "1265",
                         "endColumns": "198",
                         "endOffsets": "1459"
-                    }
-                },
-                {
-                    "source": "/Users/ankush/.gradle/caches/transforms-1/files-1.1/jetified-firebase-messaging-17.3.3.aar/2df61f961b85a7f68457a25995ddbb44/res/values-sl/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "205",
-                        "endColumns": "99",
-                        "endOffsets": "304"
-                    },
-                    "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "2818",
-                        "endColumns": "103",
-                        "endOffsets": "2917"
                     }
                 }
             ]

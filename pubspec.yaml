@@ -35,22 +35,23 @@ dev_dependencies:
   font_awesome_flutter: ^8.0.1
 
 flutter:
-
-
   uses-material-design: true
 
   assets:
-        - assets/eldora_logo.png
-        - assets/icons/cold.png
-        - assets/icons/disinterested.png
-        - assets/icons/hot.png
-        - assets/icons/medium.png
-        - assets/icons/logout.png
+    - assets/eldora_logo.png
+    - assets/icons/cold.png
+    - assets/icons/disinterested.png
+    - assets/icons/hot.png
+    - assets/icons/medium.png
+    - assets/icons/logout.png
+    - assets/icons/complete.png
+    - assets/icons/incomplete.png
+    - assets/img/frelit.png
 
   fonts:
     - family: WorkSansSemiBold
       fonts:
-          - asset: assets/fonts/Work_Sans/WorkSans-SemiBold.ttf
+        - asset: assets/fonts/Work_Sans/WorkSans-SemiBold.ttf
 
     - family: WorkSansBold
       fonts:

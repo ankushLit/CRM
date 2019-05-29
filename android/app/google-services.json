@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "676889653431",
-    "firebase_url": "https://eldora-crm.firebaseio.com",
-    "project_id": "eldora-crm",
-    "storage_bucket": "eldora-crm.appspot.com"
+    "project_number": "578864080058",
+    "firebase_url": "https://frelitenergy-babde.firebaseio.com",
+    "project_id": "frelitenergy-babde",
+    "storage_bucket": "frelitenergy-babde.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:676889653431:android:a52c2ab5713db1d3",
+        "mobilesdk_app_id": "1:578864080058:android:a52c2ab5713db1d3",
         "android_client_info": {
           "package_name": "com.example.crm"
         }
       },
       "oauth_client": [
         {
-          "client_id": "676889653431-klk9b3cbv37126obbdku49sf4j22teor.apps.googleusercontent.com",
+          "client_id": "578864080058-cnpkopqu23n4s3n7iis1ob5t8pji0481.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.crm",
@@ -23,37 +23,23 @@
           }
         },
         {
-          "client_id": "676889653431-49vku8t5qm4vfsd578mfsp8gpcgeorst.apps.googleusercontent.com",
+          "client_id": "578864080058-2l5h204h073nnv97flgh082jnrovinfs.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBz9TmtjbA2uCmFQ_pIx5bI1XlRsujEBqw"
+          "current_key": "AIzaSyC2_6m4uOMJcAhra0dDo4eh4A3bGlOYeZ4"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "676889653431-49vku8t5qm4vfsd578mfsp8gpcgeorst.apps.googleusercontent.com",
+              "client_id": "578864080058-2l5h204h073nnv97flgh082jnrovinfs.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "676889653431-0a527erhdl0g4rdg1rn1tk7jg1allpcf.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.crm"
-              }
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     }

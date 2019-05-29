@@ -3,23 +3,23 @@ import 'package:crm/model/customer.dart';
 import 'package:crm/controllers/database_controller.dart';
 
 class AddEntryDialog extends StatefulWidget {
-  final Customer customer=new Customer();
+  final Customer customer = new Customer();
   final bool whereFrom;
   final String cid;
-  AddEntryDialog({this.whereFrom,this.cid});
+  AddEntryDialog({this.whereFrom, this.cid});
   @override
   AddEntryDialogState createState() => new AddEntryDialogState();
 }
 
 class AddEntryDialogState extends State<AddEntryDialog> {
-
   @override
   void initState() {
     print(widget.whereFrom);
-    _currentStatus='Hot';
+    _currentStatus = 'Hot';
     check();
     super.initState();
   }
+
   String _currentStatus;
   String _name;
   String _email;
@@ -29,31 +29,32 @@ class AddEntryDialogState extends State<AddEntryDialog> {
   final TextEditingController _emailController = new TextEditingController();
   final TextEditingController _nameController = new TextEditingController();
   final TextEditingController _addressController = new TextEditingController();
-  final TextEditingController _addressLine2Controller=new TextEditingController();
-  final TextEditingController _phoneNumberController = new TextEditingController();
+  final TextEditingController _addressLine2Controller =
+      new TextEditingController();
+  final TextEditingController _phoneNumberController =
+      new TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   bool _autoValidate = false;
 
-
   void check() async {
-    List<String> data=new List();
-    if(widget.whereFrom){
-      data=await DatabaseController.getCustomerDetailsToEdit(widget.cid);
+    List<String> data = new List();
+    if (widget.whereFrom) {
+      data = await DatabaseController.getCustomerDetailsToEdit(widget.cid);
       setState(() {
-        _name=data[0];
-        _email=data[1];
-        _address=data[2];
-        _phoneNumber=data[3];
-        _currentStatus=data[4].substring(0,1).toUpperCase()+data[4].substring(1);
-        _addressLine2=data[5];
+        _name = data[0];
+        _email = data[1];
+        _address = data[2];
+        _phoneNumber = data[3];
+        _currentStatus =
+            data[4].substring(0, 1).toUpperCase() + data[4].substring(1);
+        _addressLine2 = data[5];
       });
-      _emailController.text=_email;
-      _addressController.text=_address;
-      _addressLine2Controller.text=_addressLine2;
-      _nameController.text=_name;
-      _phoneNumberController.text=_phoneNumber;
+      _emailController.text = _email;
+      _addressController.text = _address;
+      _addressLine2Controller.text = _addressLine2;
+      _nameController.text = _name;
+      _phoneNumberController.text = _phoneNumber;
     }
-
   }
 
   @override
@@ -70,217 +71,231 @@ class AddEntryDialogState extends State<AddEntryDialog> {
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: new AppBar(
-        title: new Text(widget.whereFrom ? 'Edit Details':'New Customer'),
-        backgroundColor: Color(0xFFF2CB1D),
-        actions: [
-          new FlatButton(
-              onPressed: () {
-                _validateInputs();
-                if(widget.whereFrom){
-                  print(widget.cid);
-                  DatabaseController.editCustomerSave(
-                      _name,
-                      _phoneNumber,
-                      _email,
-                      _address,
-                      _currentStatus,
-                      _addressLine2,widget.cid
-                  );
-                }
-                else {
-                  DatabaseController.addCustomerSave(
-                      _name, _phoneNumber, _email, _address, _currentStatus,
-                      _addressLine2);
-                }
-                Navigator.pop(context,true);
-              },
-              child: new Text('SAVE',
-                  style: Theme
-                      .of(context)
-                      .textTheme
-                      .subhead
-                      .copyWith(color: Colors.white))),
-        ],
-      ),
-      body: Container(
-        child: SingleChildScrollView(
-        child: new Column(
-        children: <Widget>[
-          new Form(
-            key: _formKey,
-            autovalidate: _autoValidate,
-            child: new Column(
-              children: <Widget>[
-                new ListTile(
-                  leading: const Icon(Icons.person),
-                  title: new TextFormField(
-                    controller: _nameController,
-                    decoration: new InputDecoration(
-                      labelText: "Name",
+          title: new Text(widget.whereFrom ? 'Edit Details' : 'New Customer'),
+          backgroundColor: Color(0xFFF2CB1D),
+          actions: [
+            new FlatButton(
+                onPressed: () {
+                  _validateInputs();
+                  if (widget.whereFrom) {
+                    print(widget.cid);
+                    DatabaseController.editCustomerSave(
+                        _name,
+                        _phoneNumber,
+                        _email,
+                        _address,
+                        _currentStatus,
+                        _addressLine2,
+                        widget.cid);
+                  } else {
+                    DatabaseController.addCustomerSave(_name, _phoneNumber,
+                        _email, _address, _currentStatus, _addressLine2);
+                  }
+                },
+                child: new Text('SAVE',
+                    style: Theme.of(context)
+                        .textTheme
+                        .subhead
+                        .copyWith(color: Colors.white))),
+          ],
+        ),
+        body: Container(
+            child: SingleChildScrollView(
+          child: new Column(
+            children: <Widget>[
+              new Form(
+                key: _formKey,
+                autovalidate: _autoValidate,
+                child: new Column(
+                  children: <Widget>[
+                    new ListTile(
+                      leading: const Icon(Icons.person),
+                      title: new TextFormField(
+                        controller: _nameController,
+                        decoration: new InputDecoration(
+                          labelText: "Name",
+                        ),
+                        validator: assignName,
+                        onSaved: (s) {
+                          setState(() {
+                            _name = s;
+                          });
+                        },
+                      ),
                     ),
-                    validator: assignName,
-                    onSaved: (s){
-                      setState(() {
-                        _name=s;
-                      });
-                    },
-                  ),
-                ),
-                new ListTile(
-                  leading: const Icon(Icons.phone),
-                  title: new TextFormField(
-                    controller: _phoneNumberController,
-                    keyboardType: TextInputType.numberWithOptions(),
-                    decoration: new InputDecoration(
-                      hintText: "Phone",
+                    new ListTile(
+                      leading: const Icon(Icons.phone),
+                      title: new TextFormField(
+                        controller: _phoneNumberController,
+                        keyboardType: TextInputType.numberWithOptions(),
+                        decoration: new InputDecoration(
+                          hintText: "Phone",
+                        ),
+                        validator: assignPhoneNumber,
+                        onSaved: (s) {
+                          setState(() {
+                            _phoneNumber = s;
+                          });
+                        },
+                      ),
                     ),
-                    validator: assignPhoneNumber,
-                    onSaved: (s){
-                      setState(() {
-                        _phoneNumber=s;
-                      });
-                    },
-                  ),
-                ),
-                new ListTile(
-                  leading: const Icon(Icons.email),
-                  title: new TextFormField(
-                    controller: _emailController,
-                    decoration: new InputDecoration(
-                      labelText: "Email",
+                    new ListTile(
+                      leading: const Icon(Icons.email),
+                      title: new TextFormField(
+                        controller: _emailController,
+                        decoration: new InputDecoration(
+                          labelText: "Email",
+                        ),
+                        validator: assignEmail,
+                        onSaved: (s) {
+                          setState(() {
+                            _email = s;
+                          });
+                        },
+                        keyboardType: TextInputType.emailAddress,
+                      ),
                     ),
-                    validator: assignEmail,
-                    onSaved: (s){
-                      setState(() {
-                        _email=s;
-                      });
-                    },
-                    keyboardType: TextInputType.emailAddress,
-                  ),
-                ),
-                const Divider(
-                  height: 3.0,
-                ),
-                new ListTile(
-                  leading: new Image(image: new AssetImage('assets/icons/'+_currentStatus.toLowerCase()+'.png')),
-                  title: const Text('Status'),
-                ),
-                new ListTile(
-                  title:new Column(
-                    children: <Widget>[
-                      new Row(
+                    const Divider(
+                      height: 3.0,
+                    ),
+                    new ListTile(
+                      leading: new Image(
+                          image: new AssetImage('assets/icons/' +
+                              _currentStatus.toLowerCase() +
+                              '.png')),
+                      title: const Text('Status'),
+                    ),
+                    new ListTile(
+                      title: new Column(
                         children: <Widget>[
-                          new Radio(value: 'Hot', groupValue: _currentStatus, onChanged: (String s)=>getStatus(s),activeColor: Colors.red),
-                          new Text('Hot'),
+                          new Row(
+                            children: <Widget>[
+                              new Radio(
+                                  value: 'Hot',
+                                  groupValue: _currentStatus,
+                                  onChanged: (String s) => getStatus(s),
+                                  activeColor: Colors.red),
+                              new Text('Hot'),
+                            ],
+                          ),
+                          new Row(
+                            children: <Widget>[
+                              new Radio(
+                                  value: 'Medium',
+                                  groupValue: _currentStatus,
+                                  onChanged: (String s) => getStatus(s),
+                                  activeColor: Colors.yellow),
+                              new Text('Medium'),
+                            ],
+                          ),
+                          new Row(
+                            children: <Widget>[
+                              new Radio(
+                                  value: 'Cold',
+                                  groupValue: _currentStatus,
+                                  onChanged: (String s) => getStatus(s),
+                                  activeColor: Colors.blue),
+                              new Text('Cold'),
+                            ],
+                          ),
+                          new Row(
+                            children: <Widget>[
+                              new Radio(
+                                  value: 'Disinterested',
+                                  groupValue: _currentStatus,
+                                  onChanged: (String s) => getStatus(s),
+                                  activeColor: Colors.black),
+                              new Text('Not Interested'),
+                            ],
+                          ),
                         ],
                       ),
-                      new Row(
-                        children: <Widget>[
-                          new Radio(value: 'Medium', groupValue: _currentStatus, onChanged: (String s)=>getStatus(s),activeColor: Colors.yellow ),
-                          new Text('Medium'),
-                        ],
-                      ),
-                      new Row(
-                        children: <Widget>[
-                          new Radio(value: 'Cold', groupValue: _currentStatus, onChanged: (String s)=>getStatus(s),activeColor: Colors.blue ),
-                          new Text('Cold'),
-                        ],
-                      ),
-                      new Row(
-                        children: <Widget>[
-                          new Radio(value: 'Disinterested', groupValue: _currentStatus, onChanged: (String s)=>getStatus(s),activeColor: Colors.black ),
-                          new Text('Not Interested'),
-                        ],
-                      ),
-                    ],
-                ),
-                ),
-                new ListTile(
-                  leading: const Icon(Icons.add_location),
-                  title: const Text('Address'),
-                ),
-                new ListTile(
-                    title: new TextFormField(
+                    ),
+                    new ListTile(
+                      leading: const Icon(Icons.add_location),
+                      title: const Text('Address'),
+                    ),
+                    new ListTile(
+                        title: new TextFormField(
                       controller: _addressController,
                       decoration: new InputDecoration(
                         labelText: "Line 1",
                         border: OutlineInputBorder(),
                       ),
                       validator: assignAddressLineOne,
-                      onSaved: (s){
+                      onSaved: (s) {
                         setState(() {
-                          _address=s;
+                          _address = s;
                         });
                       },
-                    )
-                ),
-                new ListTile(
-                    title: new TextFormField(
+                    )),
+                    new ListTile(
+                        title: new TextFormField(
                       decoration: new InputDecoration(
                         labelText: "Line 2 (optional)",
                         border: OutlineInputBorder(),
                       ),
                       controller: _addressLine2Controller,
-                      onSaved: (s){
+                      onSaved: (s) {
                         setState(() {
-                          _addressLine2=s;
+                          _addressLine2 = s;
                         });
                       },
-                    )
-                )
-              ],
-            ),
+                    ))
+                  ],
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
-    )
-      )
-    );
+        )));
   }
+
   void _validateInputs() {
     final form = _formKey.currentState;
     if (form.validate()) {
       // Text forms was validated.
       form.save();
+      Navigator.pop(context, true);
     } else {
       setState(() => _autoValidate = true);
     }
   }
-  void getStatus(String status){
+
+  void getStatus(String status) {
     setState(() {
-      if(status=='Hot'){
-        _currentStatus='Hot';
-      } else if(status=='Cold'){
-        _currentStatus='Cold';
-      } else if(status=='Medium'){
-        _currentStatus='Medium';
-      }
-      else{
-        _currentStatus='Disinterested';
+      if (status == 'Hot') {
+        _currentStatus = 'Hot';
+      } else if (status == 'Cold') {
+        _currentStatus = 'Cold';
+      } else if (status == 'Medium') {
+        _currentStatus = 'Medium';
+      } else {
+        _currentStatus = 'Disinterested';
       }
     });
     print(_currentStatus);
   }
-  String assignName(String s){
-    if(s.length<3){
+
+  String assignName(String s) {
+    if (s.length < 3) {
       return 'Name must be atleast 3 characters';
-    }
-    else{
-      return null;
-    }
-    }
-  String assignPhoneNumber(String s){
-    if(s.length <10 || s.length>10){
-      return 'Invalid mobile number';
-    }
-    else{
+    } else {
       return null;
     }
   }
-  String assignEmail(String value){
+
+  String assignPhoneNumber(String s) {
+    if (s.length < 10 || s.length > 10) {
+      return 'Invalid mobile number';
+    } else {
+      return null;
+    }
+  }
+
+  String assignEmail(String value) {
     if (value.isEmpty) {
       // The form is empty
-      return "Enter email address";
+      return null;
     }
     // This is just a regular expression for email addresses
     String p = "[a-zA-Z0-9\+\.\_\%\-\+]{1,256}" +
@@ -299,16 +314,13 @@ class AddEntryDialogState extends State<AddEntryDialog> {
 
     // The pattern of the email didn't match the regex above.
     return 'Email is not valid';
-
   }
 
-  String assignAddressLineOne(String s){
-    if(s.isEmpty){
+  String assignAddressLineOne(String s) {
+    if (s.isEmpty) {
       return 'Address line one cannot be empty';
-    }
-    else{
+    } else {
       return null;
     }
   }
-
 }

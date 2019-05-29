@@ -2,39 +2,37 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
-	<string>ca-app-pub-3940256099942544/2934735716</string>
-	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
-	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>676889653431-0a527erhdl0g4rdg1rn1tk7jg1allpcf.apps.googleusercontent.com</string>
+	<string>578864080058-d1ngbdcm6ss94us6ve9r8fi6ec62mfv3.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.676889653431-0a527erhdl0g4rdg1rn1tk7jg1allpcf</string>
+	<string>com.googleusercontent.apps.578864080058-d1ngbdcm6ss94us6ve9r8fi6ec62mfv3</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>578864080058-cnpkopqu23n4s3n7iis1ob5t8pji0481.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDFywAnKm_wTYPpFXyt5U--pfy0wbJrSMs</string>
+	<string>AIzaSyDTDF_DMUvY4-Ermx9hjwLhRMlY46aBI9s</string>
 	<key>GCM_SENDER_ID</key>
-	<string>676889653431</string>
+	<string>578864080058</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.crm</string>
+	<string>com.frelitenergy.crm</string>
 	<key>PROJECT_ID</key>
-	<string>eldora-crm</string>
+	<string>frelitenergy-babde</string>
 	<key>STORAGE_BUCKET</key>
-	<string>eldora-crm.appspot.com</string>
+	<string>frelitenergy-babde.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true></true>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
 	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false></false>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
 	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:676889653431:ios:a52c2ab5713db1d3</string>
+	<string>1:578864080058:ios:9f4d1aaf840e6488</string>
 	<key>DATABASE_URL</key>
-	<string>https://eldora-crm.firebaseio.com</string>
+	<string>https://frelitenergy-babde.firebaseio.com</string>
 </dict>
 </plist>
