@@ -31,23 +31,26 @@ class DatabaseController {
         details.add(d.data['contactNumber']);
         details.add(d.data['status']);
         details.add(d.data['addressLine2']);
+        details.add(d.data['type']);
       });
       print(details);
     });
     return details;
   }
 
-  static dynamic customerInfo(BuildContext context, String uid) {
+  static dynamic customerResidentialInfo(BuildContext context, String uid) {
     return StreamBuilder(
         stream: Firestore.instance
             .collection('customers')
             .where('uid', isEqualTo: uid)
+            .where('orderCNF', isEqualTo: 'notConfirmed')
+            .where('type',isEqualTo:'r')
             .snapshots(),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
-            return Center(child: 
-            Text('Loading.. Please Wait')
-            ,);
+            return Center(
+              child: Text('Loading.. Please Wait'),
+            );
           }
           return new ListView.builder(
             scrollDirection: Axis.vertical,
@@ -55,31 +58,86 @@ class DatabaseController {
             itemCount: snapshot.data.documents.length,
             itemBuilder: (BuildContext context, int index) {
               return CustomerCard(
-                  snapshot.data.documents[snapshot.data.documents.length - index - 1]
-                      ['status'],
+                snapshot.data
+                        .documents[snapshot.data.documents.length - index - 1]
+                    ['status'],
+                snapshot.data
+                        .documents[snapshot.data.documents.length - index - 1]
+                    ['customerName'],
+                snapshot.data
+                        .documents[snapshot.data.documents.length - index - 1]
+                    ['address'],
+                snapshot.data
+                        .documents[snapshot.data.documents.length - index - 1]
+                    ['contactNumber'],
+                snapshot.data
+                        .documents[snapshot.data.documents.length - index - 1]
+                    ['cid'],
+                snapshot.data
+                        .documents[snapshot.data.documents.length - index - 1]
+                    ['email'],
+                snapshot.data
+                        .documents[snapshot.data.documents.length - index - 1]
+                    ['addressLine2'],
+                  false,
                   snapshot.data
-                          .documents[snapshot.data.documents.length - index - 1]
-                      ['customerName'],
-                  snapshot.data.documents[snapshot.data.documents.length - index - 1]
-                          ['address'] +
-                      ', ' +
-                      snapshot.data
-                              .documents[snapshot.data.documents.length - index - 1]
-                          ['addressLine2'],
-                  snapshot.data
-                          .documents[snapshot.data.documents.length - index - 1]
-                      ['contactNumber'],
-                  snapshot.data
-                          .documents[snapshot.data.documents.length - index - 1]
-                      ['location'],
-                  snapshot.data
-                          .documents[snapshot.data.documents.length - index - 1]
-                      ['cid']);
+                        .documents[snapshot.data.documents.length - index - 1]
+                    ['type']
+              );
             },
           );
         });
   }
-
+static dynamic customerCommercialInfo(BuildContext context, String uid) {
+    return StreamBuilder(
+        stream: Firestore.instance
+            .collection('customers')
+            .where('uid', isEqualTo: uid)
+            .where('orderCNF', isEqualTo: 'notConfirmed')
+            .where('type',isEqualTo:'c')
+            .snapshots(),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return Center(
+              child: Text('Loading.. Please Wait'),
+            );
+          }
+          return new ListView.builder(
+            scrollDirection: Axis.vertical,
+            shrinkWrap: true,
+            itemCount: snapshot.data.documents.length,
+            itemBuilder: (BuildContext context, int index) {
+              return CustomerCard(
+                snapshot.data
+                        .documents[snapshot.data.documents.length - index - 1]
+                    ['status'],
+                snapshot.data
+                        .documents[snapshot.data.documents.length - index - 1]
+                    ['customerName'],
+                snapshot.data
+                        .documents[snapshot.data.documents.length - index - 1]
+                    ['address'],
+                snapshot.data
+                        .documents[snapshot.data.documents.length - index - 1]
+                    ['contactNumber'],
+                snapshot.data
+                        .documents[snapshot.data.documents.length - index - 1]
+                    ['cid'],
+                snapshot.data
+                        .documents[snapshot.data.documents.length - index - 1]
+                    ['email'],
+                snapshot.data
+                        .documents[snapshot.data.documents.length - index - 1]
+                    ['addressLine2'],
+                  false,
+                  snapshot.data
+                        .documents[snapshot.data.documents.length - index - 1]
+                    ['type']
+              );
+            },
+          );
+        });
+  }
   static dynamic insertNotifications(
       String date,
       String cid,
@@ -154,9 +212,9 @@ class DatabaseController {
             .snapshots(),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
-            return Center(child: 
-            Text('Loading.. Please Wait')
-            ,);
+            return Center(
+              child: Text('Loading.. Please Wait'),
+            );
           }
           return new ListView.builder(
             scrollDirection: Axis.vertical,
@@ -192,7 +250,7 @@ class DatabaseController {
   }
 
   static void editCustomerSave(String name, String phoneNumber, String email,
-      String address, String clientStatus, String al2, String cid) async {
+      String address, String clientStatus, String al2, String cid,String typ) async {
     FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
     FirebaseUser user = await _firebaseAuth.currentUser();
     String uid = user.uid;
@@ -220,7 +278,8 @@ class DatabaseController {
           'customerName': name,
           'contactNumber': phoneNumber,
           'email': email,
-          'status': clientStatus.toLowerCase()
+          'status': clientStatus.toLowerCase(),
+          'type': typ.toLowerCase()
         });
       });
     });
@@ -266,8 +325,12 @@ class DatabaseController {
               element['customerName'],
               element['address'],
               element['contactNumber'],
-              element['location'],
-              element['cid']);
+              element['cid'],
+              element['email'],
+              element['addressLine2'],
+              
+              false,
+              element['type']);
         }).toList());
   }
 
@@ -280,7 +343,7 @@ class DatabaseController {
   }
 
   static void addCustomerSave(String name, String phoneNumber, String email,
-      String address, String clientStatus, String al2) async {
+      String address, String clientStatus, String al2,String typ) async {
     FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
     FirebaseUser user = await _firebaseAuth.currentUser();
     String uid = user.uid;
@@ -301,9 +364,98 @@ class DatabaseController {
       'customerName': name.substring(0, 1).toUpperCase() + name.substring(1),
       'contactNumber': phoneNumber,
       'email': email,
+      'orderCNF': 'notConfirmed',
+      'searchKey': searchKey.toUpperCase(),
+      'status': clientStatus.toLowerCase(),
+      'type':typ
+    });
+  }
+
+  static void addOrder(String name, String phoneNumber, String email,
+      String address, String clientStatus, String al2, String cid,String typ) async {
+    FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+    FirebaseUser user = await _firebaseAuth.currentUser();
+    String uid = user.uid;
+    String searchKey = name.substring(0, 1);
+    print("Client Name: " + name);
+    print("Phone: Number: " + phoneNumber);
+    print("Email: " + email);
+    print("Add: " + address);
+    print("Search key " + searchKey);
+    print("status: " + clientStatus);
+    Firestore.instance.collection('orders').document().setData({
+      'uid': uid,
+      'cid': cid,
+      'address': address,
+      'addressLine2': al2,
+      'customerName': name.substring(0, 1).toUpperCase() + name.substring(1),
+      'contactNumber': phoneNumber,
+      'email': email,
+      'type':typ,
       'searchKey': searchKey.toUpperCase(),
       'status': clientStatus.toLowerCase()
     });
+    Firestore.instance
+        .collection('customers')
+        .where('cid', isEqualTo: cid)
+        .getDocuments()
+        .then((qs) {
+      qs.documents.forEach((doc) {
+        Firestore.instance
+            .collection('customers')
+            .document(doc.documentID)
+            .updateData({'orderCNF': 'cnf', 'status': 'complete'});
+      });
+    });
+  }
+
+  static dynamic customerOrderInfo(BuildContext context, String uid) {
+    return StreamBuilder(
+        stream: Firestore.instance
+            .collection('orders')
+            .where('uid', isEqualTo: uid)
+            .snapshots(),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return Center(
+              child: Text('Loading.. Please Wait'),
+            );
+          }
+          return new ListView.builder(
+            scrollDirection: Axis.vertical,
+            shrinkWrap: true,
+            itemCount: snapshot.data.documents.length,
+            itemBuilder: (BuildContext context, int index) {
+              return CustomerCard(
+                snapshot.data
+                        .documents[snapshot.data.documents.length - index - 1]
+                    ['status'],
+                snapshot.data
+                        .documents[snapshot.data.documents.length - index - 1]
+                    ['customerName'],
+                snapshot.data
+                        .documents[snapshot.data.documents.length - index - 1]
+                    ['address'],
+                snapshot.data
+                        .documents[snapshot.data.documents.length - index - 1]
+                    ['contactNumber'],
+                snapshot.data
+                        .documents[snapshot.data.documents.length - index - 1]
+                    ['cid'],
+                snapshot.data
+                        .documents[snapshot.data.documents.length - index - 1]
+                    ['email'],
+                snapshot.data
+                        .documents[snapshot.data.documents.length - index - 1]
+                    ['addressLine2'],
+                    true,
+                   snapshot.data
+                        .documents[snapshot.data.documents.length - index - 1]
+                    ['type'], 
+              );
+            },
+          );
+        });
   }
 
   static dynamic remarkInfo(

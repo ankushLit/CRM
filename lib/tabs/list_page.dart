@@ -108,7 +108,9 @@ class _ListPageState extends State<ListPage>
             //           element['cid']);
             //     }).toList()),
             // Text(queryResult.toString())
-            new Expanded(child: DatabaseController.customerInfo(context, uid)),
+            new Expanded(
+                child:
+                    DatabaseController.customerResidentialInfo(context, uid)),
           ],
         ));
 

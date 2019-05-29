@@ -47,6 +47,8 @@ flutter:
     - assets/icons/complete.png
     - assets/icons/incomplete.png
     - assets/img/frelit.png
+    - assets/icons/r.png
+    - assets/icons/c.png
 
   fonts:
     - family: WorkSansSemiBold

@@ -6,6 +6,7 @@ import 'package:crm/controllers/login_controller.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'about_us.dart';
 import 'searchPage.dart';
+import 'orders.dart';
 
 class DashBoard extends StatefulWidget {
   _DashBoardState createState() => _DashBoardState();
@@ -28,6 +29,10 @@ class _DashBoardState extends State<DashBoard>
 
   void _aboutUs() {
     Navigator.push(context, MaterialPageRoute(builder: (context) => AboutUs()));
+  }
+
+  void _orders() {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => Orders()));
   }
 
   /* void addname() async{
@@ -92,19 +97,34 @@ class _DashBoardState extends State<DashBoard>
       ),
       drawer: new Drawer(
         child: new Column(children: <Widget>[
-          new UserAccountsDrawerHeader(
-            accountName: new Text(
+          Padding(
+            padding: EdgeInsets.only(
+                top: MediaQuery.of(context).size.height * 0.030),
+            child: new Image(
+                width: MediaQuery.of(context).size.width * 0.5,
+                height: MediaQuery.of(context).size.height * 0.2,
+                image: new AssetImage('assets/img/frelit.png')),
+          ),
+          // color: Color(0xFFF2CB1D)
+          Container(
+            padding: EdgeInsets.only(
+                bottom: MediaQuery.of(context).size.height * 0.025),
+            child: Text(
               userName == null ? "Frelit" : userName,
               style: TextStyle(color: Colors.black, fontSize: 20.0),
             ),
-            accountEmail: null,
-            decoration: new BoxDecoration(
-              color: Color(0xFFF2CB1D),
-            ),
+          ),
+          Divider(
+            color: Colors.grey,
+          ),
+          new ListTile(
+            title: new Text("Orders"),
+            leading: new Icon(Icons.select_all),
+            onTap: _orders,
           ),
           new ListTile(
             title: new Text("Sign Out"),
-            leading: new Icon(Icons.clear),
+            leading: new Icon(Icons.money_off),
             onTap: _signedOut,
           ),
           new ListTile(

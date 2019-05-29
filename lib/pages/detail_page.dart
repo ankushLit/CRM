@@ -13,10 +13,13 @@ class DetailPage extends StatefulWidget {
   final String customerName;
   final String address;
   final String contactNumber;
-  final String location;
+  final bool pgCnf;
   final String cid;
+  final String email;
+  final String typ;
+  final String addressLine2;
   DetailPage(this.status, this.customerName, this.address, this.contactNumber,
-      this.location, this.cid);
+      this.cid, this.email, this.addressLine2, this.pgCnf, this.typ);
 }
 
 class _State extends State<DetailPage> {
@@ -54,6 +57,47 @@ class _State extends State<DetailPage> {
             image: new AssetImage('assets/icons/' + widget.status + '.png')),
       ),
     );
+    Future<void> _cnfOrder() async {
+      return showDialog<void>(
+        context: context,
+        barrierDismissible: false, // user must tap button!
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Order Confirmation'),
+            content: SingleChildScrollView(
+              child: ListBody(
+                children: <Widget>[
+                  Text('Are you sure you want to confirm the order ?'),
+                ],
+              ),
+            ),
+            actions: <Widget>[
+              FlatButton(
+                child: Text('Confirm'),
+                onPressed: () {
+                  DatabaseController.addOrder(
+                      widget.customerName,
+                      widget.contactNumber,
+                      widget.email,
+                      widget.address,
+                      'complete',
+                      widget.addressLine2,
+                      widget.cid,
+                      widget.typ);
+                  Navigator.of(context).pop();
+                },
+              ),
+              FlatButton(
+                child: Text('Cancle'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        },
+      );
+    }
 
     final callCustomer = GestureDetector(
       child: Container(
@@ -92,11 +136,17 @@ class _State extends State<DetailPage> {
                     fullscreenDialog: true));
               },
             ),
-            Icon(
-              Icons.account_circle,
-              color: Colors.black,
-              size: MediaQuery.of(context).size.height * 0.041,
-            ),
+            Image(
+              height: MediaQuery.of(context).size.height * 0.041,
+              image: AssetImage(
+                  'assets/icons/' + widget.typ.toLowerCase() + '.png'),
+            )
+            // Icon(
+            //   Icons.account_circle,
+            //   color: Colors.black,
+            //   size: MediaQuery.of(context).size.height * 0.041,
+            // ),
+            ,
             callCustomer
           ],
         ),
@@ -152,7 +202,7 @@ class _State extends State<DetailPage> {
         new ListTile(
           leading: const Icon(Icons.location_city),
           title: new Text(
-            widget.address,
+            widget.address + ', ' + widget.addressLine2,
             textAlign: TextAlign.left,
             style: TextStyle(
               fontSize: MediaQuery.of(context).size.height * 0.020,
@@ -179,12 +229,24 @@ class _State extends State<DetailPage> {
           child:
               Text("Schedule Follow Up", style: TextStyle(color: Colors.white)),
         ));
+    final confirmOrderBtn = Container(
+      width: MediaQuery.of(context).size.width,
+      child: RaisedButton(
+        child: Text('Confirm Order', style: TextStyle(color: Colors.white)),
+        color: Color(0xFF2B4876),
+        onPressed: _cnfOrder,
+      ),
+    );
     final bottomContent = Container(
       width: MediaQuery.of(context).size.width,
       padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.025),
       child: Center(
         child: Column(
-          children: <Widget>[bottomContentText, readButton],
+          children: <Widget>[
+            bottomContentText,
+            readButton,
+            widget.pgCnf ? Container() : confirmOrderBtn
+          ],
         ),
       ),
     );

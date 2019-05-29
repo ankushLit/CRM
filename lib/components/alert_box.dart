@@ -16,11 +16,13 @@ class AddEntryDialogState extends State<AddEntryDialog> {
   void initState() {
     print(widget.whereFrom);
     _currentStatus = 'Hot';
+    _typ = "r";
     check();
     super.initState();
   }
 
   String _currentStatus;
+  String _typ;
   String _name;
   String _email;
   String _address;
@@ -48,7 +50,9 @@ class AddEntryDialogState extends State<AddEntryDialog> {
         _currentStatus =
             data[4].substring(0, 1).toUpperCase() + data[4].substring(1);
         _addressLine2 = data[5];
+        _typ = data[6];
       });
+
       _emailController.text = _email;
       _addressController.text = _address;
       _addressLine2Controller.text = _addressLine2;
@@ -86,10 +90,11 @@ class AddEntryDialogState extends State<AddEntryDialog> {
                         _address,
                         _currentStatus,
                         _addressLine2,
-                        widget.cid);
+                        widget.cid,
+                        _typ);
                   } else {
                     DatabaseController.addCustomerSave(_name, _phoneNumber,
-                        _email, _address, _currentStatus, _addressLine2);
+                        _email, _address, _currentStatus, _addressLine2, _typ);
                   }
                 },
                 child: new Text('SAVE',
@@ -155,8 +160,48 @@ class AddEntryDialogState extends State<AddEntryDialog> {
                         keyboardType: TextInputType.emailAddress,
                       ),
                     ),
-                    const Divider(
-                      height: 3.0,
+                    // SizedBox(
+                    //   height: MediaQuery.of(context).size.height * 0.01,
+                    // ),
+                    Divider(
+                      height: MediaQuery.of(context).size.height * 0.02,
+                    ),
+                    new ListTile(
+                      leading: new Image(
+                          color: Colors.grey,
+                          height: MediaQuery.of(context).size.height * 0.03,
+                          image: new AssetImage(
+                              'assets/icons/' + _typ.toLowerCase() + '.png')),
+                      title: const Text('Order Type'),
+                    ),
+                    new ListTile(
+                      title: new Column(
+                        children: <Widget>[
+                          new Row(
+                            children: <Widget>[
+                              new Radio(
+                                  value: 'r',
+                                  groupValue: _typ,
+                                  onChanged: (String s) => getType(s),
+                                  activeColor: Colors.indigo),
+                              new Text('Residential'),
+                            ],
+                          ),
+                          new Row(
+                            children: <Widget>[
+                              new Radio(
+                                  value: 'c',
+                                  groupValue: _typ,
+                                  onChanged: (String s) => getType(s),
+                                  activeColor: Colors.indigo),
+                              new Text('Commercial'),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                    Divider(
+                      height: MediaQuery.of(context).size.height * 0.02,
                     ),
                     new ListTile(
                       leading: new Image(
@@ -210,6 +255,9 @@ class AddEntryDialogState extends State<AddEntryDialog> {
                           ),
                         ],
                       ),
+                    ),
+                    Divider(
+                      height: MediaQuery.of(context).size.height * 0.02,
                     ),
                     new ListTile(
                       leading: const Icon(Icons.add_location),
@@ -274,6 +322,16 @@ class AddEntryDialogState extends State<AddEntryDialog> {
       }
     });
     print(_currentStatus);
+  }
+
+  void getType(String t) {
+    setState(() {
+      if (t == 'r') {
+        _typ = 'r';
+      } else {
+        _typ = 'c';
+      }
+    });
   }
 
   String assignName(String s) {
