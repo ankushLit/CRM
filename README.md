@@ -1,5 +1,5 @@
 # eldoraCRM
-CRM application for eldora power.
+CRM application for Frelit Energy.
 
 
 
