@@ -38,6 +38,8 @@ class CustomerCard extends StatelessWidget {
                 child: Padding(
                     padding: EdgeInsets.only(left: 0.0),
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text('Client Status: ' + status,
                             style: TextStyle(color: Colors.black)),

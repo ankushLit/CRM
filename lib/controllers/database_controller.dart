@@ -367,7 +367,8 @@ static dynamic customerCommercialInfo(BuildContext context, String uid) {
       'orderCNF': 'notConfirmed',
       'searchKey': searchKey.toUpperCase(),
       'status': clientStatus.toLowerCase(),
-      'type':typ
+      'type':typ,
+      'date':DateTime.now().day.toString()+'-'+DateTime.now().month.toString()+'-'+DateTime.now().year.toString()
     });
   }
 
@@ -393,7 +394,8 @@ static dynamic customerCommercialInfo(BuildContext context, String uid) {
       'email': email,
       'type':typ,
       'searchKey': searchKey.toUpperCase(),
-      'status': clientStatus.toLowerCase()
+      'status': clientStatus.toLowerCase(),
+      'orderDate':DateTime.now().day.toString()+'-'+DateTime.now().month.toString()+'-'+DateTime.now().year.toString()
     });
     Firestore.instance
         .collection('customers')

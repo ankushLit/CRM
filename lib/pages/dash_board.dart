@@ -1,11 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:crm/tabs/notifications_tab.dart';
 import 'package:crm/tabs/settings_tab.dart';
 import 'package:crm/tabs/list_page.dart';
 import 'package:crm/controllers/login_controller.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+
 import 'about_us.dart';
 import 'searchPage.dart';
+import 'commercial_list.dart';
 import 'orders.dart';
 
 class DashBoard extends StatefulWidget {
@@ -33,6 +35,11 @@ class _DashBoardState extends State<DashBoard>
 
   void _orders() {
     Navigator.push(context, MaterialPageRoute(builder: (context) => Orders()));
+  }
+
+  void _commercial() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => CommercialList()));
   }
 
   /* void addname() async{
@@ -116,6 +123,19 @@ class _DashBoardState extends State<DashBoard>
           ),
           Divider(
             color: Colors.grey,
+          ),
+          new ListTile(
+            title: new Text("Commercial"),
+            leading: Padding(
+              padding: EdgeInsets.only(
+                  left: MediaQuery.of(context).size.height * 0.0030),
+              child: new Image(
+                color: Colors.grey,
+                height: MediaQuery.of(context).size.height * 0.023,
+                image: AssetImage('assets/icons/c.png'),
+              ),
+            ),
+            onTap: _commercial,
           ),
           new ListTile(
             title: new Text("Orders"),
